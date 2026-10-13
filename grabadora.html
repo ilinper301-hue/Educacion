@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grabadora de sonidos</title>
+<style>
+:root{--bg:#eaf4ff;--ink:#1b2440;--card:#fff;--ac:#5b45e0;--on:#fff;--ok:#1fa97a;--bad:#e5484d;--line:#c9d8f0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#131a30;--ink:#eef1ff;--card:#1f2847;--ac:#8c7bff;--on:#10142b;--line:#33406a}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-serif;font-size:17px}
+main{max-width:600px;margin:0 auto;padding:14px 16px 60px}
+h1{font-size:1.3rem;margin:0 0 8px}
+p,li{line-height:1.45}
+ol{padding-left:20px}
+details{background:var(--card);border:2px solid var(--line);border-radius:18px;margin:12px 0;padding:6px 12px}
+summary{font-weight:700;padding:10px 0;cursor:pointer}
+.r{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--line)}
+.n{flex:1;font-size:1.4rem;font-weight:700}
+.n small{display:block;font-size:.75rem;font-weight:400;opacity:.75}
+button{font:inherit;color:inherit;cursor:pointer}
+.r button{width:48px;height:48px;border-radius:14px;border:2px solid var(--line);background:var(--bg);font-size:1.2rem}
+.r.rec button:first-of-type{background:var(--bad);color:#fff;border-color:var(--bad)}
+.s{min-width:70px;font-size:.8rem;text-align:right}
+.r.ok .s{color:var(--ok)}.r.err .s{color:var(--bad)}
+.dl{background:var(--ac);color:var(--on);border:0;border-radius:16px;padding:14px 20px;font-weight:700;width:100%;margin-top:6px}
+#msg{min-height:1.5em;font-weight:600;margin-top:10px}
+button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+</style>
+</head>
+<body>
+<main>
+<h1>🎙️ Grabadora de sonidos</h1>
+<ol>
+<li>Pulse <b>⏺</b>, diga el sonido y pulse <b>⏹</b> (se para solo a los 6 s).</li>
+<li>Pulse <b>▶</b> para escucharlo. Si no le gusta, vuelva a grabar.</li>
+<li>Al terminar, pulse <b>Descargar ZIP</b>.</li>
+</ol>
+<p>Busque un sitio silencioso y diga el <b>sonido</b>, no el nombre de la letra. El programa recorta el silencio y ajusta el volumen solo. Las grabaciones se guardan en este navegador, pero descargue el ZIP por seguridad.</p>
+<button class="dl" id="dl">⬇ Descargar ZIP con todo lo grabado</button>
+<div id="msg"></div>
+<div id="list"></div>
+</main>
+<script>
+const g=id=>document.getElementById(id),msg=t=>g('msg').textContent=t;
+const FD={l:'letras',s:'silabas',w:'palabras'},fn=s=>s.replace(/ñ/g,'ny');
+const ORDER='a e i o u l m s n h d f p t r b v ñ y k c z q g j w x ll ch'.split(' ');
+const V=[...'aeiou'];
+const SY=[...new Set([...[...'lmsnhdfptrbvñykz',...['ll','ch']].flatMap(c=>V.map(v=>c+v)),'ca','co','cu','ce','ci','que','qui','ga','go','gu','gue','gui','ja','je','ji','jo','ju','ge','gi','wa','we','wi',
+...V.flatMap(v=>[...'lrsnmdz'].map(c=>v+c)),...['bl','br','cl','cr','fl','fr','gl','gr','dr','tr','pl','pr'].flatMap(c=>V.map(v=>c+v))])];
+const WO=[...new Set('ala ola aula mama mula lima malo sol mesa sala isla luna mano mono nena hola hilo humo hueso dado dedo nido mundo fila fino fideo fama sopa mapa pelo pulpo pato lata tomate tinta pera rana mira pared bota libro nube bolsa vaso vela uva nave niño piña baño uña yoyo yema yate rey kilo koala kayak karate casa cama cola cuna zapato zumo taza luz queso paquete quiero gato goma lago gusano ojo caja jirafa tijeras kiwi wifi web taxi texto boxeo lluvia llave silla pollo leche coche noche mochila sal papel mar color pasta mosca pan campo tambor pez azul blusa tabla brazo bruja clase clavo crema cruz flor flaco fruta fresa globo regla tigre gris cuadro madre tren trigo plato pluma playa premio'.split(' '))];
+const SEC=[['l','Letras',ORDER],['s','Sílabas (opcional)',SY],['w','Palabras (opcional)',WO]];
+const LONG=new Set('a e i o u l m s n f r z j v y ll'.split(' '));
+const HT={h:'No suena. Diga, por ejemplo: «hache, no suena»',c:'Sonido /k/ (casa), breve',q:'Sonido /k/ (queso), breve',g:'Sonido /g/ (gato), breve',x:'Sonido /ks/ (taxi)',w:'Como en «wifi»',ch:'Sonido de «ch», breve',z:'Sonido de la z, prolongado'};
+const S={};
+g('list').innerHTML=SEC.map(([p,t,L],i)=>`<details ${i?'':'open'}><summary>${t} <span id="c${p}"></span></summary>${L.map(n=>{const k=p+':'+n;return `<div class="r" id="r-${k}"><div class="n">${n}<small>${p=='l'?(HT[n]||(LONG.has(n)?'Prolongado, 1-2 s':'Breve, sin vocal detrás')):''}</small></div><button data-a="r" data-k="${k}" aria-label="Grabar ${n}">⏺</button><button data-a="p" data-k="${k}" aria-label="Escuchar ${n}">▶</button><span class="s" id="s-${k}"></span></div>`}).join('')}</details>`}).join('');
+function cnt(){SEC.forEach(([p,t,L])=>{g('c'+p).textContent=`(${Object.keys(S).filter(k=>k[0]==p).length}/${L.length})`})}
+function mark(k,st){const r=g('r-'+k);r.className='r '+st;g('s-'+k).textContent={rec:'🔴 grabando',ok:'✔',err:'⚠ repita'}[st]||'';r.querySelector('button').textContent=st=='rec'?'⏹':'⏺';cnt()}
+/* guardado local */
+const DB=new Promise(r=>{try{const q=indexedDB.open('rec',1);q.onupgradeneeded=()=>q.result.createObjectStore('a');q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)}catch(e){r(null)}});
+async function put(k,v){try{const d=await DB;if(d)d.transaction('a','readwrite').objectStore('a').put(v,k)}catch(e){}}
+async function all(){try{const d=await DB;if(!d)return[];return await new Promise(r=>{const o=d.transaction('a').objectStore('a'),ks=o.getAllKeys(),vs=o.getAll();vs.onsuccess=()=>r(ks.result.map((k,i)=>[k,vs.result[i]]));vs.onerror=()=>r([])})}catch(e){return[]}}
+/* audio -> WAV recortado y normalizado */
+function wav(s,sr){const b=new DataView(new ArrayBuffer(44+s.length*2)),w=(o,t)=>[...t].forEach((c,i)=>b.setUint8(o+i,c.charCodeAt(0)));
+ w(0,'RIFF');b.setUint32(4,36+s.length*2,true);w(8,'WAVEfmt ');b.setUint32(16,16,true);b.setUint16(20,1,true);b.setUint16(22,1,true);b.setUint32(24,sr,true);b.setUint32(28,sr*2,true);b.setUint16(32,2,true);b.setUint16(34,16,true);w(36,'data');b.setUint32(40,s.length*2,true);
+ s.forEach((v,i)=>b.setInt16(44+i*2,Math.max(-1,Math.min(1,v))*32767,true));return new Uint8Array(b.buffer)}
+async function proc(blob){const ac=new(window.AudioContext||window.webkitAudioContext)();const buf=await ac.decodeAudioData(await blob.arrayBuffer());ac.close();
+ let d=buf.getChannelData(0),sr=buf.sampleRate;
+ if(sr>=40000){const h=new Float32Array(d.length>>1);for(let i=0;i<h.length;i++)h[i]=(d[2*i]+d[2*i+1])/2;d=h;sr/=2}
+ let pk=0;for(const v of d)pk=Math.max(pk,Math.abs(v));
+ if(pk<.02)throw new Error('silencio');
+ const th=pk*.08;let a=0,z=d.length-1;while(Math.abs(d[a])<th)a++;while(Math.abs(d[z])<th)z--;
+ a=Math.max(0,a-Math.round(sr*.015));z=Math.min(d.length-1,z+Math.round(sr*.08));
+ const gn=.9/pk;return wav(d.slice(a,z+1).map(v=>v*gn),sr)}
+/* grabar y reproducir */
+let st,rec;
+async function toggle(k){if(rec&&rec.state=='recording'){rec.stop();return}
+ if(!st)try{st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}})}catch(e){return msg('Sin permiso de micrófono ('+e.name+'). Permítalo en el candado de la dirección.')}
+ msg('');const ch=[];rec=new MediaRecorder(st);mark(k,'rec');
+ rec.ondataavailable=e=>ch.push(e.data);
+ rec.onstop=async()=>{try{const w=await proc(new Blob(ch));S[k]=w;await put(k,w);mark(k,'ok')}catch(e){delete S[k];mark(k,'err')}};
+ rec.start();const r0=rec;setTimeout(()=>{if(r0.state=='recording')r0.stop()},6000)}
+function play(k){const w=S[k];if(w)new Audio(URL.createObjectURL(new Blob([w],{type:'audio/wav'}))).play()}
+g('list').onclick=e=>{const b=e.target.closest('button');if(!b)return;b.dataset.a=='r'?toggle(b.dataset.k):play(b.dataset.k)};
+/* ZIP sin compresión */
+function crc(b){const t=crc.t||(crc.t=Array.from({length:256},(_,n)=>{let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;return c>>>0}));let x=-1;for(const v of b)x=t[(x^v)&255]^(x>>>8);return(x^-1)>>>0}
+function zip(fs){const e=new TextEncoder(),P=[],C=[];let off=0;
+ for(const f of fs){const n=e.encode(f.name),c=crc(f.data),L=f.data.length,h=new DataView(new ArrayBuffer(30));
+  h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint32(14,c,true);h.setUint32(18,L,true);h.setUint32(22,L,true);h.setUint16(26,n.length,true);P.push(h.buffer,n,f.data);
+  const d=new DataView(new ArrayBuffer(46));d.setUint32(0,0x02014b50,true);d.setUint16(4,20,true);d.setUint16(6,20,true);d.setUint16(8,0x0800,true);d.setUint32(16,c,true);d.setUint32(20,L,true);d.setUint32(24,L,true);d.setUint16(28,n.length,true);d.setUint32(42,off,true);C.push(d.buffer,n);off+=30+n.length+L}
+ let cs=0;for(const p of C)cs+=p.byteLength;
+ const z=new DataView(new ArrayBuffer(22));z.setUint32(0,0x06054b50,true);z.setUint16(8,fs.length,true);z.setUint16(10,fs.length,true);z.setUint32(12,cs,true);z.setUint32(16,off,true);
+ return new Blob([...P,...C,z.buffer],{type:'application/zip'})}
+g('dl').onclick=()=>{const f=Object.entries(S).map(([k,d])=>({name:`audio/${FD[k[0]]}/${fn(k.slice(2))}.wav`,data:d}));
+ if(!f.length)return msg('Aún no hay grabaciones.');
+ const a=document.createElement('a');a.href=URL.createObjectURL(zip(f));a.download='audio-leer.zip';a.click();
+ msg(f.length+' audios en el ZIP. Descomprímalo y suba la carpeta «audio» junto a la app.')};
+(async()=>{for(const[k,v]of await all())if(g('r-'+k)){S[k]=v;mark(k,'ok')}cnt()})();
+cnt();
+</script>
+</body>
+</html>
