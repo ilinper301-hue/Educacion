@@ -55,7 +55,7 @@ const SEC=[['l','Letras',ORDER],['s','Sílabas (opcional)',SY],['w','Palabras (o
 const LONG=new Set('a e i o u l m s n f r z j v y ll'.split(' '));
 const HT={h:'No suena. Diga, por ejemplo: «hache, no suena»',c:'Sonido /k/ (casa), breve',q:'Sonido /k/ (queso), breve',g:'Sonido /g/ (gato), breve',x:'Sonido /ks/ (taxi)',w:'Como en «wifi»',ch:'Sonido de «ch», breve',z:'Sonido de la z, prolongado'};
 const S={};
-g('list').innerHTML=SEC.map(([p,t,L],i)=>`<details ${i?'':'open'}><summary>${t} <span id="c${p}"></span></summary>${L.map(n=>{const k=p+':'+n;return `<div class="r" id="r-${k}"><div class="n">${n}<small>${p=='l'?(HT[n]||(LONG.has(n)?'Prolongado, 1-2 s':'Breve, sin vocal detrás')):''}</small></div><button data-a="r" data-k="${k}" aria-label="Grabar ${n}">⏺</button><button data-a="p" data-k="${k}" aria-label="Escuchar ${n}">▶</button><span class="s" id="s-${k}"></span></div>`}).join('')}</details>`}).join('');
+g('list').innerHTML=SEC.map(([p,t,L],i)=>`<details ${i?'':'open'}><summary>${t} <span id="c${p}"></span></summary>${L.map(n=>{const k=p+':'+n;return `<div class="r" id="r-${k}"><div class="n">${n}<small>${p=='l'?(HT[n]||(LONG.has(n)?'Prolongado, 1-2 s':'Breve, sin vocal detrás')):''}</small></div><button data-a="r" data-k="${k}" aria-label="Grabar ${n}">⏺</button><button data-a="p" data-k="${k}" aria-label="Escuchar ${n}">▶</button><span class="s" id="s-${k}"></span></div>`}).join('')}</details>`).join('');
 function cnt(){SEC.forEach(([p,t,L])=>{g('c'+p).textContent=`(${Object.keys(S).filter(k=>k[0]==p).length}/${L.length})`})}
 function mark(k,st){const r=g('r-'+k);r.className='r '+st;g('s-'+k).textContent={rec:'🔴 grabando',ok:'✔',err:'⚠ repita'}[st]||'';r.querySelector('button').textContent=st=='rec'?'⏹':'⏺';cnt()}
 /* guardado local */
