@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+"""<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -197,3 +197,4 @@ function itemSylIntro(i,d){const L=LV[i].s;
  const my=draw(BACK+`<div class="stage"><p class="fb" style="margin:0">Toca y escucha cómo se juntan los sonidos</p><div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:14px">${L.map((s,k)=>`<button class="k" id="y${k}" style="font-size:1.8rem">${s}</button>`).join('')}</div><div class="row"><button class="btn" id="n">Seguir ➜</button></div></div>`);
  L.forEach((s,k)=>$('#y'+k).onclick=async()=>{for(const u of units(s)){if(my!==T)return;await snd(u);await wait(100)}if(my===T)await say('s:'+s,s,.7)});$('#n').onclick=()=>d()}
 function itemSylChoose(pool,all,d){const t=nextLetter(pool),U=units(t);let
+"""
