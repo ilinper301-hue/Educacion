@@ -46,6 +46,8 @@ input{font:inherit;padding:12px;border-radius:14px;border:2px solid var(--line);
 @keyframes in{from{opacity:0;transform:translateY(12px)}}
 .big.go{background:var(--accent);color:var(--on);border-color:var(--accent)}
 .btn.sm{padding:8px 14px;font-size:.9rem}
+h3{margin:18px 0 6px;font-size:1rem}
+select{font:inherit;padding:10px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);flex:1;min-width:0}
 .shake{animation:sh .3s}
 @keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -167,7 +169,19 @@ function review(){const ks=shuf(dueList()).slice(0,6),all=sylsTo(pr().lv);let n=
   const k=ks[n++];ORDER.includes(k)?itemChoose(pr().lv,nx,k):itemSylChoose([k],all,nx)};nx()}
 function adults(){const a=3+rand(6),b=4+rand(6);draw(BACK+`<div class="stage"><h2>Zona de adultos</h2><p>¿Cuánto es ${a} + ${b}?</p><div class="row"><input id="ans" inputmode="numeric" aria-label="Respuesta"><button class="btn" id="ok">Entrar</button></div><div class="fb" id="fb"></div></div>`);
  $('#ok').onclick=()=>+$('#ans').value==a+b?panel():fb('Respuesta incorrecta','no')}
-function panel(){const p=pr(),weak=Object.entries(p.s||{}).filter(([k,v])=>v.b<=1).map(x=>x[0]).join(' · ')||'—';
+function panel(){const p=pr(),E=Object.entries(p.s||{}),weak=E.filter(([k,v])=>v.b<=1).map(x=>x[0]).slice(0,14).join(' · ')||'—',dom=E.filter(([k,v])=>v.b>=3).length;
+ draw(BACK+`<div class="stage" style="text-align:left"><h2>${p.n}</h2><p>Nivel actual: <b>${LV[p.lv].g}</b> (${p.lv+1} de ${LV.length})<br>Estrellas: <b>${p.st}</b><br>Dominadas: <b>${dom}</b> · Repaso pendiente: <b>${dueList().length}</b><br>Les cuestan: <b>${weak}</b></p>
+<h3>Nivel</h3><div class="row"><select id="lvs" aria-label="Nivel">${LV.map((l,i)=>`<option value="${i}"${i==p.lv?' selected':''}>${i+1}. ${l.g}</option>`).join('')}</select><button class="btn alt sm" onclick="sure(this,setLv)">Aplicar</button></div><p><small>Los niveles posteriores quedan bloqueados.</small></p>
+<h3>Perfil</h3><div class="row"><input id="rn" value="${p.n}" maxlength="20" aria-label="Nombre"><button class="btn alt sm" onclick="renP()">Renombrar</button></div><div class="row"><button class="btn alt sm" onclick="profiles()">👤 Cambiar de perfil</button><button class="btn alt sm" onclick="sure(this,resetP)">Reiniciar progreso</button><button class="btn rec sm" onclick="sure(this,delP)">Borrar perfil</button></div>
+<h3>Copia de seguridad</h3><div class="row"><button class="btn sm" onclick="expo()">⬇ Guardar copia</button><button class="btn alt sm" onclick="document.getElementById('fi').click()">⬆ Restaurar copia</button></div><input type="file" id="fi" accept=".json,application/json" hidden onchange="impo(this.files[0])"><div class="row" id="nx"></div>
+<h3>Diagnóstico</h3><div class="row"><button class="btn alt sm" onclick="micTest()">🎤 Probar micrófono</button></div><div class="fb" id="fb" style="white-space:pre-line"></div></div>`)}
+function setLv(){const p=pr();p.lv=+document.getElementById('lvs').value;save();hdr();panel()}
+function renP(){const n=document.getElementById('rn').value.replace(/[<>&"'`]/g,'').trim();if(!n)return;pr().n=n;save();hdr();fb('Nombre cambiado','ok')}
+function expo(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({v:1,d:new Date().toISOString(),P})],{type:'application/json'}));a.download='copia-aprende-a-leer.json';a.click();fb('Copia guardada en Descargas. Guárdela en un sitio seguro.','ok')}
+let pend=null;
+function impo(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result),ps=((o.P||{}).ps||[]).map(p=>({n:String(p.n||'').replace(/[<>&"'`]/g,'').slice(0,20)||'Niño',lv:Math.max(0,Math.min(LV.length-1,+p.lv||0)),st:Math.max(0,+p.st||0),s:Object.fromEntries(Object.entries(p.s||{}).filter(([k,v])=>v&&typeof v.d=='number').map(([k,v])=>[k,{b:Math.max(0,Math.min(5,v.b|0)),d:v.d}]))}));if(!ps.length)throw 0;pend=ps;document.getElementById('nx').innerHTML=`<button class="btn" onclick="applyImp()">Confirmar: reemplazar por ${ps.length} perfil(es)</button>`;fb('Copia leída. Se reemplazarán los perfiles actuales.')}catch(e){fb('El archivo no es una copia válida.','no')}};r.readAsText(f)}
+function applyImp(){if(!pend)return;P={ps:pend,c:0};pend=null;save();home()}
+function panelOld(){const p=pr(),weak=Object.entries(p.s||{}).filter(([k,v])=>v.b<=1).map(x=>x[0]).join(' · ')||'—';
  draw(BACK+`<div class="stage" style="text-align:left"><h2>${p.n}</h2><p>Nivel actual: <b>${LV[p.lv].g}</b> (${p.lv+1} de ${LV.length})<br>Estrellas: <b>${p.st}</b><br>Les cuestan: <b>${weak}</b></p><div class="row"><button class="btn alt" onclick="sure(this,resetP)">Reiniciar progreso</button><button class="btn rec" onclick="sure(this,delP)">Borrar perfil</button></div><div class="row"><button class="btn alt sm" onclick="micTest()">🎤 Probar micrófono</button></div><div class="fb" id="fb" style="white-space:pre-line"></div></div>`)}
 async function micTest(){const o=[];
  o.push('Dentro de otra página: '+(window.top!==window?'sí':'no'));
