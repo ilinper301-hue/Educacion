@@ -1,4 +1,4 @@
-## 🚀 Demo en vivo
+ ## 🚀 Demo en vivo
 
 Puedes probar el artefacto interactivo directamente aquí:
-[Ver Artefacto en Vivo]([](https://github.com/ilinper301-hue/Educacion/blob/main/index.html))
+[Ver Artefacto en Vivo](https://ilinper301-hue.github.io/Educacion/)
