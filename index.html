@@ -51,6 +51,7 @@ h3{margin:18px 0 6px;font-size:1rem}
 select{font:inherit;padding:10px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);flex:1;min-width:0}
 button:active{transform:scale(.96)}
 .l.mu{opacity:.55}
+.k.al{position:relative}.stp{position:absolute;right:3px;top:0;font-size:.8rem}
 @keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
 .fl{position:fixed;left:50%;top:38%;font-size:4rem;pointer-events:none;z-index:9;animation:fl .9s ease-out forwards}
 @keyframes fl{from{opacity:1;transform:translate(-50%,0) scale(.6)}to{opacity:0;transform:translate(-50%,-90px) scale(1.4)}}
@@ -112,8 +113,40 @@ const TX0=[
 ['Hoy llueve en la calle.','¿Qué hay hoy?',['🌧️','☀️']],
 ['Mamá lleva una llave.','¿Qué lleva mamá?',['🔑','🍎']],
 ['Mi mamá toma leche.','¿Qué toma mamá?',['🥛','🍵']],
-['Papá tiene un coche. El coche es rojo. Papá sale en el coche.','¿De qué color es el coche?',['🔴','🔵']]];
-const TX=TX0.map(([x,q,o])=>({x,q,o,n:(x.match(/\./g)||[]).length,l:Math.max(...x.toLowerCase().match(/ll|ch|[a-zñ]/g).map(u=>ORDER.indexOf(u)))}));
+['Papá tiene un coche. El coche es rojo. Papá sale en el coche.','¿De qué color es el coche?',['🔴','🔵']],
+['Mi papá pone un kilo de pera en la mesa.','¿Qué pone papá en la mesa?',['🍐','🍎']],
+['El koala está en la isla.','¿Quién está en la isla?',['🐨','🐻']],
+['Mamá quiere queso.','¿Qué quiere mamá?',['🧀','🍎']],
+['Pepe quiere pan y queso. Pepe pone el queso en el pan.','¿Qué pone Pepe en el pan?',['🧀','🍓']],
+['Mi mamá usa el wifi.','¿Qué usa mamá?',['📶','🍎']],
+['Hay un kiwi en la mesa.','¿Qué hay en la mesa?',['🥝','🍌']],
+['El taxi sale de la casa.','¿Qué sale de la casa?',['🚕','🐘']],
+['Hay un texto en el libro.','¿Dónde hay un texto?',['📖','🍎']],
+['Mi papá sale al mar.','¿A dónde sale papá?',['🌊','🏠'],'al'],
+['Mi mamá pone sal en la sopa.','¿Qué pone mamá en la sopa?',['🧂','🍬'],'al'],
+['Mi papá tiene un farol. El farol es de color rojo.','¿De qué color es el farol?',['🔴','🔵'],'al'],
+['Mi mamá come pasta.','¿Qué come mamá?',['🍝','🍎'],'as'],
+['Una mosca está en la mesa. La mosca no come pan.','¿Quién está en la mesa?',['🪰','🐜'],'as'],
+['En la isla hay un mono. El mono come uvas.','¿Quién está en la isla?',['🐒','🐻'],'as'],
+['Mi casa está en el campo.','¿Dónde está la casa?',['🌾','🏝️'],'am'],
+['El tambor es azul.','¿De qué color es el tambor?',['💙','❤️'],'am'],
+['Hay un pez azul en el mar. El pez nada.','¿Qué hay en el mar?',['🐟','🐻'],'am'],
+['Mi mamá tiene una blusa.','¿Qué tiene mamá?',['👚','🧢'],'bl'],
+['La bruja abre el libro. Es un libro de brujas.','¿Qué abre la bruja?',['📖','📦'],'bl'],
+['En la clase hay una mesa.','¿Dónde hay una mesa?',['🏫','🌋'],'cl'],
+['Mi papá pone un clavo en la pared.','¿Qué pone papá?',['🔩','🍎'],'cl'],
+['Mamá pone crema en mi brazo.','¿Dónde pone la crema?',['💪','🍞'],'cl'],
+['La flor es de color rosa.','¿Qué es de color rosa?',['🌸','🍀'],'fl'],
+['Mi mamá come fruta. La fruta es una fresa.','¿Qué fruta es?',['🍓','🍌'],'fl'],
+['El globo es rojo.','¿Qué es rojo?',['🎈','🌲'],'gl'],
+['El tigre está en la sala. El tigre es grande.','¿Quién está en la sala?',['🐯','🐭'],'gl'],
+['Mi madre pone un cuadro en la pared.','¿Qué pone mi madre?',['🖼️','🍎'],'dr'],
+['El tren sale a las tres.','¿Qué sale a las tres?',['🚆','🚗'],'dr'],
+['En el campo hay trigo. El trigo es de color oro.','¿Qué hay en el campo?',['🌾','🍌'],'dr'],
+['Hay una pluma en el plato.','¿Qué hay en el plato?',['🪶','🍎'],'pl'],
+['Mi papá y yo vamos a la playa.','¿A dónde van?',['🏖️','🏔️'],'pl'],
+['Mi premio es un libro.','¿Qué es el premio?',['📖','🍬'],'pl']];
+const TX=TX0.map(([x,q,o,g])=>({x,q,o,n:(x.match(/\./g)||[]).length,l:Math.max(...x.toLowerCase().match(/ll|ch|[a-zñ]/g).map(u=>ORDER.indexOf(u)).concat(g?[ORDER.length+EXTRA.findIndex(e=>e.g==g)]:[]))}));
 let lastX=null;
 const FR_FROM=14; // desde este nivel (0 = A; 14 = R, la mitad de las letras) se añade una frase o lectura al final de cada nivel
 // Texto que lee la voz sintética para cada sonido (se sustituye por tus audios)
@@ -168,7 +201,7 @@ function pick(i){P.c=i;save();home()}
 function addP(){const n=$('#nm').value.replace(/[<>&"'`]/g,'').trim();if(!n)return;P.ps.push({n,lv:0,st:0});P.c=P.ps.length-1;save();home()}
 
 function home(){AD=0;const p=pr();if(!p)return profiles();hdr();const n=dueList().length;
- draw(`<div class="stage in"><div class="pic">👋</div><h2 style="margin:8px 0 0">¡Hola, ${p.n}!</h2>${streak(p)>1?`<p style="margin:6px 0 0;font-weight:600">🔥 ${streak(p)} días seguidos</p>`:''}</div><div class="menu" style="margin-top:14px"><button class="big go in" style="animation-delay:.1s" onclick="level(${p.lv})"><i>▶️</i><div><b>Aprender</b><span>${p.st?'Seguir':'Empezar'}: ${cap(LV[p.lv].g)}</span></div></button><button class="big in" style="animation-delay:.2s" onclick="practice()"><i>🎮</i><div><b>Practicar</b><span>Juega con lo que ya sabes</span></div></button>${n?`<button class="big in" style="animation-delay:.3s" onclick="review()"><i>🔁</i><div><b>Repaso de hoy</b><span>${n} para recordar</span></div></button>`:''}</div><div class="row in" style="animation-delay:.4s"><button class="btn alt sm" onclick="map()">🗺️ Mapa de letras</button><button class="btn alt sm" onclick="adults()">🔒 Adultos</button></div>`)}
+ draw(`<div class="stage in"><div class="pic">👋</div><h2 style="margin:8px 0 0">¡Hola, ${p.n}!</h2>${streak(p)>1?`<p style="margin:6px 0 0;font-weight:600">🔥 ${streak(p)} días seguidos</p>`:''}</div><div class="menu" style="margin-top:14px"><button class="big go in" style="animation-delay:.1s" onclick="level(${p.lv})"><i>▶️</i><div><b>Aprender</b><span>${p.st?'Seguir':'Empezar'}: ${cap(LV[p.lv].g)}</span></div></button><button class="big in" style="animation-delay:.2s" onclick="practice()"><i>🎮</i><div><b>Practicar</b><span>Juega con lo que ya sabes</span></div></button>${n?`<button class="big in" style="animation-delay:.3s" onclick="review()"><i>🔁</i><div><b>Repaso de hoy</b><span>${n} para recordar</span></div></button>`:''}</div><div class="row in" style="animation-delay:.4s"><button class="btn alt sm" onclick="album()">🎨 Mi álbum</button><button class="btn alt sm" onclick="map()">🗺️ Mapa de letras</button><button class="btn alt sm" onclick="adults()">🔒 Adultos</button></div>`)}
 function dueList(){const n=Date.now();return Object.entries(pr().s||{}).filter(([k,v])=>v.d<=n).map(x=>x[0])}
 function review(){const ks=shuf(dueList()).slice(0,6),all=sylsTo(pr().lv);let n=0;
  const nx=()=>{if(n>=ks.length)return draw(BACK+'<div class="stage"><div class="pic">🌟</div><h2>¡Repaso hecho!</h2><div class="row"><button class="btn" onclick="home()">Inicio</button></div></div>');
@@ -176,7 +209,7 @@ function review(){const ks=shuf(dueList()).slice(0,6),all=sylsTo(pr().lv);let n=
 function adults(){AD=1;const a=3+rand(6),b=4+rand(6);draw(BACK+`<div class="stage"><h2>Zona de adultos</h2><p>¿Cuánto es ${a} + ${b}?</p><div class="row"><input id="ans" inputmode="numeric" aria-label="Respuesta"><button class="btn" id="ok">Entrar</button></div><div class="fb" id="fb"></div></div>`);
  $('#ok').onclick=()=>+$('#ans').value==a+b?panel():fb('Respuesta incorrecta','no')}
 function panel(){AD=1;const p=pr(),E=Object.entries(p.s||{}),weak=E.filter(([k,v])=>v.b<=1).map(x=>x[0]).slice(0,14).join(' · ')||'—',dom=E.filter(([k,v])=>v.b>=3).length;
- draw(BACK+`<div class="stage" style="text-align:left"><h2>${p.n}</h2><p>Nivel actual: <b>${LV[p.lv].g}</b> (${p.lv+1} de ${LV.length})<br>Estrellas: <b>${p.st}</b><br>Hoy: <b>${tm(p,0)}</b> · Semana: <b>${tm(p,6)}</b> · Racha: <b>${streak(p)}</b> 🔥<br>Dominadas: <b>${dom}</b> · Repaso pendiente: <b>${dueList().length}</b><br>Les cuestan: <b>${weak}</b></p>
+ draw(BACK+`<div class="stage" style="text-align:left"><h2>${p.n}</h2><p>Nivel actual: <b>${LV[p.lv].g}</b> (${p.lv+1} de ${LV.length})<br>Estrellas: <b>${p.st}</b><br>Hoy: <b>${tm(p,0)}</b> · Semana: <b>${tm(p,6)}</b> · Racha: <b>${streak(p)}</b> 🔥<br>Dominadas: <b>${dom}</b> · Repaso pendiente: <b>${dueList().length}</b><br>Textos leídos: <b>${Object.keys(p.rd||{}).length}</b> · Releídos: <b>${Object.values(p.rd||{}).filter(v=>v.n>1).length}</b><br>Les cuestan: <b>${weak}</b></p>
 <h3>Nivel</h3><div class="row"><select id="lvs" aria-label="Nivel">${LV.map((l,i)=>`<option value="${i}"${i==p.lv?' selected':''}>${i+1}. ${l.g}</option>`).join('')}</select><button class="btn alt sm" onclick="sure(this,setLv)">Aplicar</button></div><p><small>Los niveles posteriores quedan bloqueados.</small></p>
 <h3>Sesión</h3><div class="row"><select id="lim" aria-label="Duración de la sesión">${[10,15,20,30,0].map(m=>`<option value="${m}"${m==(p.lim==null?15:p.lim)?' selected':''}>${m?m+' minutos':'Sin límite'}</option>`).join('')}</select><button class="btn alt sm" onclick="setLim()">Aplicar</button></div>
 <h3>Perfil</h3><div class="row"><input id="rn" value="${p.n}" maxlength="20" aria-label="Nombre"><button class="btn alt sm" onclick="renP()">Renombrar</button></div><div class="row"><button class="btn alt sm" onclick="profiles()">👤 Cambiar de perfil</button><button class="btn alt sm" onclick="sure(this,resetP)">Reiniciar progreso</button><button class="btn rec sm" onclick="sure(this,delP)">Borrar perfil</button></div>
@@ -186,7 +219,7 @@ function setLv(){const p=pr();p.lv=+document.getElementById('lvs').value;save();
 function renP(){const n=document.getElementById('rn').value.replace(/[<>&"'`]/g,'').trim();if(!n)return;pr().n=n;save();hdr();fb('Nombre cambiado','ok')}
 function expo(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({v:1,d:new Date().toISOString(),P})],{type:'application/json'}));a.download='copia-aprende-a-leer.json';a.click();fb('Copia guardada en Descargas. Guárdela en un sitio seguro.','ok')}
 let pend=null;
-function impo(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result),ps=((o.P||{}).ps||[]).map(p=>({n:String(p.n||'').replace(/[<>&"'`]/g,'').slice(0,20)||'Niño',lv:Math.max(0,Math.min(LV.length-1,+p.lv||0)),st:Math.max(0,+p.st||0),lim:[0,10,15,20,30].includes(p.lim)?p.lim:15,d:Object.fromEntries(Object.entries(p.d||{}).filter(([k,v])=>/^\d{4}-\d\d-\d\d$/.test(k)&&v).map(([k,v])=>[k,{t:Math.max(0,+v.t||0),s:Math.max(0,+v.s||0)}])),s:Object.fromEntries(Object.entries(p.s||{}).filter(([k,v])=>v&&typeof v.d=='number').map(([k,v])=>[k,{b:Math.max(0,Math.min(5,v.b|0)),d:v.d}]))}));if(!ps.length)throw 0;pend=ps;document.getElementById('nx').innerHTML=`<button class="btn" onclick="applyImp()">Confirmar: reemplazar por ${ps.length} perfil(es)</button>`;fb('Copia leída. Se reemplazarán los perfiles actuales.')}catch(e){fb('El archivo no es una copia válida.','no')}};r.readAsText(f)}
+function impo(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result),ps=((o.P||{}).ps||[]).map(p=>({n:String(p.n||'').replace(/[<>&"'`]/g,'').slice(0,20)||'Niño',lv:Math.max(0,Math.min(LV.length-1,+p.lv||0)),st:Math.max(0,+p.st||0),lim:[0,10,15,20,30].includes(p.lim)?p.lim:15,rd:Object.fromEntries(Object.entries(p.rd||{}).filter(([k,v])=>v&&typeof v.n=='number').map(([k,v])=>[k,{n:v.n|0,l:+v.l||0,b:+v.b||0,d:String(v.d||'')}])),d:Object.fromEntries(Object.entries(p.d||{}).filter(([k,v])=>/^\d{4}-\d\d-\d\d$/.test(k)&&v).map(([k,v])=>[k,{t:Math.max(0,+v.t||0),s:Math.max(0,+v.s||0)}])),s:Object.fromEntries(Object.entries(p.s||{}).filter(([k,v])=>v&&typeof v.d=='number').map(([k,v])=>[k,{b:Math.max(0,Math.min(5,v.b|0)),d:v.d}]))}));if(!ps.length)throw 0;pend=ps;document.getElementById('nx').innerHTML=`<button class="btn" onclick="applyImp()">Confirmar: reemplazar por ${ps.length} perfil(es)</button>`;fb('Copia leída. Se reemplazarán los perfiles actuales.')}catch(e){fb('El archivo no es una copia válida.','no')}};r.readAsText(f)}
 function applyImp(){if(!pend)return;P={ps:pend,c:0};pend=null;save();home()}
 function panelOld(){const p=pr(),weak=Object.entries(p.s||{}).filter(([k,v])=>v.b<=1).map(x=>x[0]).join(' · ')||'—';
  draw(BACK+`<div class="stage" style="text-align:left"><h2>${p.n}</h2><p>Nivel actual: <b>${LV[p.lv].g}</b> (${p.lv+1} de ${LV.length})<br>Estrellas: <b>${p.st}</b><br>Les cuestan: <b>${weak}</b></p><div class="row"><button class="btn alt" onclick="sure(this,resetP)">Reiniciar progreso</button><button class="btn rec" onclick="sure(this,delP)">Borrar perfil</button></div><div class="row"><button class="btn alt sm" onclick="micTest()">🎤 Probar micrófono</button></div><div class="fb" id="fb" style="white-space:pre-line"></div></div>`)}
@@ -220,6 +253,12 @@ function flo(){const s=document.createElement('div');s.className='fl';s.textCont
 addEventListener('animationstart',e=>{if(e.animationName=='sh')tone(0)},true);
 // La u de que, qui, gue, gui no suena: se agrupa con la consonante (g(u) + i)
 const sil=(U,i)=>U[i]=='u'&&'qg'.includes(U[i-1]||'-')&&'ei'.includes(U[i+1]||'-');
+/* Álbum y lectura repetida */
+const COL=['#FF6B6B','#F59E0B','#14B8A6','#7DD3FC','#C4B5FD','#FDE68A'];
+function alb(i){const l=LV[i];l.x?say('s:'+l.g,l.g,.7):snd(l.g)}
+function album(){AD=0;const p=pr(),n=Math.min(p.lv,LV.length),pc=Math.round(n/LV.length*100);hdr();
+ draw(BACK+`<div class="stage"><h2 style="margin:0 0 8px">🎨 Mi álbum</h2><p class="fb" style="margin:0 0 10px">${n} de ${LV.length}</p><div style="height:16px;background:var(--line);border-radius:99px;overflow:hidden"><div style="width:${pc}%;height:100%;background:var(--sun);border-radius:99px"></div></div><div class="grid" style="margin-top:16px">${LV.map((l,i)=>i<p.lv?`<button class="k al" style="background:${COL[i%6]};color:#1E293B;border-color:transparent" onclick="alb(${i})">${l.g}${stat(l.g).b>=3?'<span class="stp">⭐</span>':''}</button>`:i==p.lv?`<button class="k al" style="border:3px dashed var(--accent)" onclick="alb(${i})">${l.g}</button>`:'<button class="k al" disabled aria-label="bloqueada">?</button>').join('')}</div></div>`)}
+function rdRec(t,sec){const p=pr(),R=p.rd=p.rd||{},o=R[t.x]||{n:0,l:0,b:0};let m='⏱ '+sec+' s';if(o.n)m+=sec<o.l?' · ¡Más rápido que la última vez! 🚀':' · ¡Bien, sigue practicando!';R[t.x]={n:o.n+1,l:sec,b:o.b?Math.min(o.b,sec):sec,d:key()};save();return m}
 function sure(b,f){if(b.dataset.s)return f();b.dataset.s=1;b.textContent='¿Seguro? Pulsa otra vez'}
 function resetP(){const p=pr();p.lv=0;p.st=0;p.s={};save();home()}
 function delP(){P.ps.splice(P.c,1);P.c=-1;save();profiles()}
@@ -234,7 +273,7 @@ function run(i){const reads=shuf(LV[i].w).slice(0,4);let n=0,h=0;lastT=null;cons
  function end(){const p=pr(),ok=!reads.length||h>=Math.ceil(reads.length*PASS);
   if(ok&&i==p.lv&&i<LV.length-1){p.lv++;save()}
   const last=i>=LV.length-1;
-  draw(BACK+(ok?`<div class="stage"><div class="pic">🎉</div><h2>¡Nivel superado!</h2><div class="row">${last?'':`<button class="btn" onclick="level(${i+1})">Siguiente: ${cap(LV[i+1].g)}</button>`}<button class="btn alt" onclick="home()">Inicio</button></div></div>`:`<div class="stage"><div class="pic">💪</div><h2>Casi. Vamos otra vez.</h2><div class="row"><button class="btn" onclick="run(${i})">Repetir</button></div></div>`))}
+  draw(BACK+(ok?`<div class="stage"><div class="pic">🎉</div><h2>¡Nivel superado!</h2><p>🎨 ¡Ya está en tu álbum!</p><div class="row">${last?'':`<button class="btn" onclick="level(${i+1})">Siguiente: ${cap(LV[i+1].g)}</button>`}<button class="btn alt" onclick="home()">Inicio</button></div></div>`:`<div class="stage"><div class="pic">💪</div><h2>Casi. Vamos otra vez.</h2><div class="row"><button class="btn" onclick="run(${i})">Repetir</button></div></div>`))}
  nx()}
 
 function itemChoose(i,d,f){if(chk())return;const known=ORDER.slice(0,i+1),pool=known.slice();for(let k=0;pool.length<3;k++)if(!pool.includes(ORDER[k]))pool.push(ORDER[k]);
@@ -253,13 +292,13 @@ function itemSylChoose(pool,all,d){if(chk())return;const t=nextLetter(pool),U=un
  const my=draw(BACK+`<div class="stage"><p class="fb" style="margin:0">¿Qué sílaba suena?</p><div class="row"><button class="btn" id="h">🔊 Escuchar</button></div><div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:16px">${o.map((s,k)=>`<button class="k" id="o${k}" style="font-size:1.8rem">${s}</button>`).join('')}</div><div class="fb" id="fb"></div></div>`);
  const hear=()=>say('s:'+t,t,.7);$('#h').onclick=hear;hear();
  o.forEach((s,k)=>$('#o'+k).onclick=async()=>{if(s==t){if(!miss)rec(t,true);star();fb('¡Sí!','ok');await wait(700);if(my===T)d()}else{const b=$('#o'+k);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);if(!miss){miss=true;rec(t,false)}fb('Escucha otra vez','no')}})}
-function itemText(t,d){if(chk())return;
+function itemText(t,d,sk){if(chk())return;const t0=Date.now();let rm='';
  draw(BACK+`<div class="stage"><div class="txt">${t.x}</div><div class="row"><button class="btn alt" id="h">🔊 Ayuda</button><button class="btn" id="n">Ya lo leí ➜</button></div></div>`);
- $('#h').onclick=()=>speak(t.x,.75);$('#n').onclick=ask;
+ $('#h').onclick=()=>speak(t.x,.75);$('#n').onclick=()=>{if(!sk)rm=rdRec(t,Math.max(1,Math.round((Date.now()-t0)/1000)));ask()};
  function ask(){const o=shuf(t.o);
   const my=draw(BACK+`<div class="stage"><p class="fb" style="margin:0">${t.q}</p><div class="row"><button class="btn" id="h">🔊 Escuchar pregunta</button><button class="btn alt" id="bk">📖 Ver texto</button></div><div class="grid" style="grid-template-columns:repeat(${o.length},1fr);margin-top:14px">${o.map((e,k)=>`<button class="k" id="o${k}" style="font-size:3rem">${e}</button>`).join('')}</div><div class="fb" id="fb"></div></div>`);
-  const hear=()=>speak(t.q,.85);$('#h').onclick=hear;hear();$('#bk').onclick=()=>itemText(t,d);
-  o.forEach((e,k)=>$('#o'+k).onclick=async()=>{if(e==t.o[0]){star();fb('¡Muy bien!','ok');await wait(800);if(my===T)d()}else{const b=$('#o'+k);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);fb('Vuelve a leer el texto','no')}})}}
+  const hear=()=>speak(t.q,.85);$('#h').onclick=hear;hear();$('#bk').onclick=()=>itemText(t,d,1);
+  o.forEach((e,k)=>$('#o'+k).onclick=async()=>{if(e==t.o[0]){star();fb('¡Muy bien!'+(rm?' '+rm:''),'ok');await wait(rm?2200:800);if(my===T)d()}else{const b=$('#o'+k);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);fb('Vuelve a leer el texto','no')}})}}
 function itemRead(w,pic,d){if(chk())return;const U=units(w);let t=0;
  const my=draw(BACK+`<div class="stage"><div class="pic">${pic||''}</div><div class="word">${U.map((c,i)=>`<span class="l${sil(U,i)?' mu':''}" id="l${i}">${c}</span>`).join('')}</div><div class="row"><button class="btn alt" id="hear">🔊 Escuchar sonidos</button><button class="btn rec" id="mic">🎤 Leo yo</button></div><div class="fb" id="fb">Escucha y luego di la palabra.</div><div class="row" id="nx"></div></div>`);
  const nxt=ok=>{$('#nx').innerHTML='<button class="btn" id="n">Siguiente ➜</button>';$('#n').onclick=()=>d(ok)};
@@ -284,13 +323,13 @@ function itemBuild(w,pic,d){if(chk())return;const U=units(w),known=ORDER.slice(0
    if(pos===U.length){star();fb('¡Lo lograste! '+w,'ok');await wait(900);if(my!==T)return;await wd(w);if(my!==T)return;$('#nx').innerHTML='<button class="btn" id="n">Siguiente ➜</button>';$('#n').onclick=()=>d(true)}}
   else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);if(!bad){bad=true;rec(U[pos],false)}fb('¡Casi! Prueba con otra letra 💪','no')}})}
 
-function practice(){const p=pr(),wi=LV.findIndex(l=>l.w.length),si=LV.findIndex(l=>l.s.length),hasS=sylsTo(p.lv).length>0,hasW=LV.slice(0,p.lv+1).some(l=>l.w.length),tf=m=>TX.filter(t=>m=='f'?t.n==1:t.n>1),okT=m=>tf(m).some(t=>t.l<=p.lv),nd=m=>Math.min(...tf(m).map(t=>t.l));
- const o=(ok,m,i,t,s,need)=>`<button class="big in" ${ok?`onclick="pl('${m}')"`:'disabled style="opacity:.55"'}><i>${ok?i:'🔒'}</i><div><b>${t}</b><span>${ok?s:'Se desbloquea con la '+cap(LV[need].g)}</span></div></button>`;
- draw(BACK+`<div class="menu">${o(1,'c','👂','Letras','Escucha y elige la letra')}${o(hasS,'s','🔡','Sílabas','Escucha, elige y construye',si)}${o(hasW,'b','🧩','Construye palabras','Ordena las letras',wi)}${o(hasW,'r','🗣️','Lee palabras','Dilas en voz alta',wi)}${o(okT('f'),'f','💬','Frases','Lee y elige la imagen',nd('f'))}${o(okT('t'),'t','📘','Lecturas','Textos cortos con preguntas',nd('t'))}</div><p class="fb">Solo con lo que ya sabes.</p>`)}
+function practice(){const p=pr(),wi=LV.findIndex(l=>l.w.length),si=LV.findIndex(l=>l.s.length),hasS=sylsTo(p.lv).length>0,hasW=LV.slice(0,p.lv+1).some(l=>l.w.length),tf=m=>TX.filter(t=>m=='f'?t.n==1:t.n>1),okT=m=>tf(m).some(t=>t.l<=p.lv),nd=m=>Math.min(...tf(m).map(t=>t.l)),okR=TX.some(t=>t.l<=p.lv&&(p.rd||{})[t.x]);
+ const o=(ok,m,i,t,s,need)=>`<button class="big in" ${ok?`onclick="pl('${m}')"`:'disabled style="opacity:.55"'}><i>${ok?i:'🔒'}</i><div><b>${t}</b><span>${ok?s:need==null?'Lee antes una frase o lectura':'Se desbloquea con la '+cap(LV[need].g)}</span></div></button>`;
+ draw(BACK+`<div class="menu">${o(1,'c','👂','Letras','Escucha y elige la letra')}${o(hasS,'s','🔡','Sílabas','Escucha, elige y construye',si)}${o(hasW,'b','🧩','Construye palabras','Ordena las letras',wi)}${o(hasW,'r','🗣️','Lee palabras','Dilas en voz alta',wi)}${o(okT('f'),'f','💬','Frases','Lee y elige la imagen',nd('f'))}${o(okT('t'),'t','📘','Lecturas','Textos cortos con preguntas',nd('t'))}${o(okR,'x','🔁','Releer','Lee otra vez y mejora tu velocidad',null)}</div><p class="fb">Solo con lo que ya sabes.</p>`)}
 function practiceOld(){const p=pr(),has=LV.slice(0,p.lv+1).some(l=>l.w.length);
  draw(BACK+`<div class="menu"><button class="big" onclick="pl('c')"><i>👂</i><div><b>Escucha y elige</b><span>Qué letra suena</span></div></button>${sylsTo(p.lv).length?`<button class="big" onclick="pl('s')"><i>🔡</i><div><b>Sílabas</b><span>Escucha, elige y construye</span></div></button>`:''}${has?`<button class="big" onclick="pl('b')"><i>🧩</i><div><b>Construye palabras</b><span>Ordena las letras</span></div></button><button class="big" onclick="pl('r')"><i>🗣️</i><div><b>Lee palabras</b><span>Dilas en voz alta</span></div></button>`:''}</div><p class="fb">Solo con las letras que ya sabes.</p>`)}
 function pl(m){const p=pr(),pool=LV.slice(0,p.lv+1).flatMap(l=>l.w);
- const nx=()=>{if(m=='f'||m=='t'){const L=TX.filter(t=>(m=='f'?t.n==1:t.n>1)&&t.l<=pr().lv),c=L.filter(t=>t!==lastX),t=c.length?c[rand(c.length)]:L[0];lastX=t;itemText(t,nx)}else if(m=='s'){const A=sylsTo(pr().lv);Math.random()<.65?itemSylChoose(A,A,nx):itemBuild(A[rand(A.length)],'',nx)}else if(m=='c')itemChoose(pr().lv,nx);else{const wt=pool.map(x=>units(x[0]).reduce((a,u)=>a+(stat(u).d<=Date.now()?6-stat(u).b:0),1));let r=Math.random()*wt.reduce((a,b)=>a+b,0),k=0;while((r-=wt[k])>0)k++;const [w,pic]=pool[k];m=='r'?itemRead(w,pic,nx):itemBuild(w,pic,nx)}};nx()}
+ const nx=()=>{if(m=='x'){const R=pr().rd||{},L=TX.filter(t=>t.l<=pr().lv&&R[t.x]).sort((a,b)=>(R[a.x].d==key())-(R[b.x].d==key())||R[a.x].n-R[b.x].n||Math.random()-.5);itemText(L[0],nx)}else if(m=='f'||m=='t'){const L=TX.filter(t=>(m=='f'?t.n==1:t.n>1)&&t.l<=pr().lv),c=L.filter(t=>t!==lastX),t=c.length?c[rand(c.length)]:L[0];lastX=t;itemText(t,nx)}else if(m=='s'){const A=sylsTo(pr().lv);Math.random()<.65?itemSylChoose(A,A,nx):itemBuild(A[rand(A.length)],'',nx)}else if(m=='c')itemChoose(pr().lv,nx);else{const wt=pool.map(x=>units(x[0]).reduce((a,u)=>a+(stat(u).d<=Date.now()?6-stat(u).b:0),1));let r=Math.random()*wt.reduce((a,b)=>a+b,0),k=0;while((r-=wt[k])>0)k++;const [w,pic]=pool[k];m=='r'?itemRead(w,pic,nx):itemBuild(w,pic,nx)}};nx()}
 
 try{if('serviceWorker' in navigator)addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').then(()=>setTimeout(()=>ORDER.forEach(u=>fetch('audio/letras/'+fn(u)+'.wav').catch(()=>{})),4000)).catch(()=>{})})}catch(e){}
 setTheme(th);$('#th').onclick=()=>setTheme(document.documentElement.dataset.theme=='dark'?'light':'dark');if(pr())home();else profiles();
