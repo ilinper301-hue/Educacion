@@ -50,6 +50,7 @@ input{font:inherit;padding:12px;border-radius:14px;border:2px solid var(--line);
 h3{margin:18px 0 6px;font-size:1rem}
 select{font:inherit;padding:10px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);flex:1;min-width:0}
 button:active{transform:scale(.96)}
+.l.mu{opacity:.55}
 @keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
 .fl{position:fixed;left:50%;top:38%;font-size:4rem;pointer-events:none;z-index:9;animation:fl .9s ease-out forwards}
 @keyframes fl{from{opacity:1;transform:translate(-50%,0) scale(.6)}to{opacity:0;transform:translate(-50%,-90px) scale(1.4)}}
@@ -217,6 +218,8 @@ addEventListener('visibilitychange',()=>{if(document.hidden&&pr())save()});
 let AC;function tone(ok){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state=='suspended')AC.resume();const t=AC.currentTime;(ok?[523,659,784]:[330,262]).forEach((hz,i)=>{const o=AC.createOscillator(),g=AC.createGain(),s=t+i*.09;o.type='sine';o.frequency.value=hz;g.gain.setValueAtTime(0,s);g.gain.linearRampToValueAtTime(ok?.12:.06,s+.02);g.gain.exponentialRampToValueAtTime(.001,s+.25);o.connect(g);g.connect(AC.destination);o.start(s);o.stop(s+.3)})}catch(e){}}
 function flo(){const s=document.createElement('div');s.className='fl';s.textContent='⭐';document.body.appendChild(s);setTimeout(()=>s.remove(),900)}
 addEventListener('animationstart',e=>{if(e.animationName=='sh')tone(0)},true);
+// La u de que, qui, gue, gui no suena: se agrupa con la consonante (g(u) + i)
+const sil=(U,i)=>U[i]=='u'&&'qg'.includes(U[i-1]||'-')&&'ei'.includes(U[i+1]||'-');
 function sure(b,f){if(b.dataset.s)return f();b.dataset.s=1;b.textContent='¿Seguro? Pulsa otra vez'}
 function resetP(){const p=pr();p.lv=0;p.st=0;p.s={};save();home()}
 function delP(){P.ps.splice(P.c,1);P.c=-1;save();profiles()}
@@ -243,7 +246,7 @@ function itemChoose(i,d,f){if(chk())return;const known=ORDER.slice(0,i+1),pool=k
 
 function itemSylIntro(i,d){if(chk())return;const L=LV[i].s;
  const my=draw(BACK+`<div class="stage"><p class="fb" style="margin:0">Toca y escucha cómo se juntan los sonidos</p><div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:14px">${L.map((s,k)=>`<button class="k" id="y${k}" style="font-size:1.8rem">${s}</button>`).join('')}</div><div class="row"><button class="btn" id="n">Seguir ➜</button></div></div>`);
- L.forEach((s,k)=>$('#y'+k).onclick=async()=>{for(const u of units(s)){if(my!==T)return;await snd(u);await wait(100)}if(my===T)await say('s:'+s,s,.7)});$('#n').onclick=()=>d()}
+ L.forEach((s,k)=>$('#y'+k).onclick=async()=>{{const U=units(s);for(let i=0;i<U.length;i++){if(my!==T)return;if(sil(U,i))continue;await snd(U[i]);await wait(100)}}if(my===T)await say('s:'+s,s,.7)});$('#n').onclick=()=>d()}
 function itemSylChoose(pool,all,d){if(chk())return;const t=nextLetter(pool),U=units(t);let miss=false;
  const sim=x=>{const V=units(x);return V[0]==U[0]||V[V.length-1]==U[U.length-1]},rest=all.filter(x=>x!==t);
  const o=shuf([t,...[...shuf(rest.filter(sim)),...shuf(rest.filter(x=>!sim(x)))].slice(0,2)]);
@@ -258,9 +261,9 @@ function itemText(t,d){if(chk())return;
   const hear=()=>speak(t.q,.85);$('#h').onclick=hear;hear();$('#bk').onclick=()=>itemText(t,d);
   o.forEach((e,k)=>$('#o'+k).onclick=async()=>{if(e==t.o[0]){star();fb('¡Muy bien!','ok');await wait(800);if(my===T)d()}else{const b=$('#o'+k);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);fb('Vuelve a leer el texto','no')}})}}
 function itemRead(w,pic,d){if(chk())return;const U=units(w);let t=0;
- const my=draw(BACK+`<div class="stage"><div class="pic">${pic||''}</div><div class="word">${U.map((c,i)=>`<span class="l" id="l${i}">${c}</span>`).join('')}</div><div class="row"><button class="btn alt" id="hear">🔊 Escuchar sonidos</button><button class="btn rec" id="mic">🎤 Leo yo</button></div><div class="fb" id="fb">Escucha y luego di la palabra.</div><div class="row" id="nx"></div></div>`);
+ const my=draw(BACK+`<div class="stage"><div class="pic">${pic||''}</div><div class="word">${U.map((c,i)=>`<span class="l${sil(U,i)?' mu':''}" id="l${i}">${c}</span>`).join('')}</div><div class="row"><button class="btn alt" id="hear">🔊 Escuchar sonidos</button><button class="btn rec" id="mic">🎤 Leo yo</button></div><div class="fb" id="fb">Escucha y luego di la palabra.</div><div class="row" id="nx"></div></div>`);
  const nxt=ok=>{$('#nx').innerHTML='<button class="btn" id="n">Siguiente ➜</button>';$('#n').onclick=()=>d(ok)};
- const blend=async()=>{for(let i=0;i<U.length;i++){const e=$('#l'+i);if(my!==T||!e)return;e.classList.add('on');await snd(U[i]);await wait(120);e.classList.remove('on')}if(my===T)await wd(w)};
+ const blend=async()=>{for(let i=0;i<U.length;i++){const e=$('#l'+i);if(my!==T||!e)return;if(sil(U,i))continue;const e2=sil(U,i+1)?$('#l'+(i+1)):null;e.classList.add('on');if(e2)e2.classList.add('on');await snd(U[i]);await wait(120);e.classList.remove('on');if(e2)e2.classList.remove('on')}if(my===T)await wd(w)};
  $('#hear').onclick=blend;
  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
  $('#mic').onclick=()=>{
@@ -277,7 +280,7 @@ function itemBuild(w,pic,d){if(chk())return;const U=units(w),known=ORDER.slice(0
  const my=draw(BACK+`<div class="stage"><div class="pic">${pic||''}</div><div class="word">${U.map((c,i)=>`<span class="slot" id="s${i}"></span>`).join('')}</div><div class="grid" style="grid-template-columns:repeat(${Math.min(pool.length,5)},1fr)">${pool.map((c,i)=>`<button class="k" id="k${i}">${c}</button>`).join('')}</div><div class="row"><button class="btn alt" id="hear">🔊 Escuchar palabra</button></div><div class="fb" id="fb"></div><div class="row" id="nx"></div></div>`);
  $('#hear').onclick=()=>wd(w);wd(w);
  pool.forEach((c,i)=>$('#k'+i).onclick=async()=>{if(pos>=U.length)return;const b=$('#k'+i);
-  if(c===U[pos]){$('#s'+pos).textContent=c;if(!bad)rec(c,true);bad=false;pos++;b.disabled=true;snd(c);
+  if(c===U[pos]){$('#s'+pos).textContent=c;if(!bad)rec(c,true);bad=false;pos++;b.disabled=true;if(!sil(U,pos-1))snd(c);
    if(pos===U.length){star();fb('¡Lo lograste! '+w,'ok');await wait(900);if(my!==T)return;await wd(w);if(my!==T)return;$('#nx').innerHTML='<button class="btn" id="n">Siguiente ➜</button>';$('#n').onclick=()=>d(true)}}
   else{b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);if(!bad){bad=true;rec(U[pos],false)}fb('¡Casi! Prueba con otra letra 💪','no')}})}
 
