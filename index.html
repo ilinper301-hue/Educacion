@@ -99,6 +99,24 @@ button:active{transform:scale(.96)}
 
 
 .pu{animation:pu 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.pg-bk{display:flex;align-items:center;gap:10px;margin-top:12px;padding:10px 12px;border-radius:16px;background:rgba(245,158,11,.12);border:1.5px solid rgba(245,158,11,.35)}.pg-bk b{font-size:.9rem;display:block;line-height:1.25}.pg-bk small{font-size:.72rem;opacity:.75;display:block}.pg-bk .btn{flex:none;min-height:44px;padding:8px 14px}.pg-bk .ib{background:rgba(245,158,11,.2);color:var(--ink)}
+.bkdot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#F59E0B;margin-left:4px}
+.pg-ch sup{font-size:.62em;margin-left:3px;opacity:.8}
+.pg-ev.p14{gap:3px}.pg-ev.p14 div{font-size:.6rem}.pg-ac{margin:6px 0 0;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.pg-ac b{font-size:1.5rem;font-variant-numeric:tabular-nums}.pg-ac small{opacity:.7;font-size:.76rem}
+.rp-ev.p14 div{font-size:.58rem}
+.ev2-it{font-size:3.4rem;font-weight:700;text-align:center;padding:16px 6px;overflow-wrap:anywhere;line-height:1.1}.ev2-it.ps{font-style:italic}
+.ev2-tx{font-size:1.5rem;line-height:1.5;font-weight:600;padding:6px 2px}.ev2-tx.sm{font-size:1rem;font-weight:500;opacity:.85}
+.ev2-qc{background:rgba(20,184,166,.12);border-radius:14px;padding:10px 12px;margin-top:10px}.ev2-qc p{margin:4px 0;font-size:1.1rem;font-weight:600}.ev2-qc small{opacity:.8}
+.ev2-meta{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;opacity:.8;margin-bottom:8px}
+.ev2-dots i{display:inline-block;width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(245,158,11,.85);margin-left:4px}.ev2-dots i.f{background:#F59E0B}
+.ev2-b{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.ev2-ok,.ev2-ko{display:flex;align-items:center;justify-content:center;gap:8px;min-height:68px;border-radius:18px;border:0;font-weight:700;font-size:1.05rem}
+.ev2-ok{background:var(--accent);color:var(--on)}.ev2-ko{background:rgba(255,107,107,.18);color:var(--ink);border:2px solid rgba(255,107,107,.55)}
+.ev2-er{margin-top:14px}.ev2-er small{display:block;opacity:.75;margin-bottom:6px}
+.ev2-sum{display:grid;gap:10px}.ev2-c{background:#F1F6FB;border-radius:12px;padding:10px 12px}.ev2-c b{display:inline-block;margin-right:8px}.ev2-c small{display:block;color:#64748B;font-size:.76rem;margin-top:4px}
+.bd{display:inline-block;border-radius:99px;padding:2px 10px;font-size:.72rem;font-weight:700}.bd.e{background:#FEF3C7;color:#92400E}.bd.d{background:#DBEAFE;color:#1E40AF}.bd.c{background:#D1FAE5;color:#065F46}.bd.n{background:#E2E8F0;color:#475569}
+.ev2-ul{margin:0;padding-left:18px}.ev2-ul li{margin:4px 0}
+@media print{.ev2-sum{grid-template-columns:1fr 1fr}}
 textarea{font:inherit;width:100%;padding:12px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
 .nt{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}.nt p{margin:2px 0 0;white-space:pre-wrap;word-break:break-word}.nt button{flex:none;min-height:40px;padding:6px 12px}
 .au{display:grid;grid-template-columns:1.4fr .9fr 1fr .9fr;gap:4px 8px;align-items:center;width:100%;padding:10px 6px;border:0;border-top:1px solid var(--line);background:transparent;text-align:left;font-size:.92rem}.au.h{font-size:.72rem;opacity:.7;text-transform:uppercase;letter-spacing:.06em}.aw{grid-column:1/-1;font-size:.76rem;opacity:.75}
@@ -157,7 +175,7 @@ textarea{font:inherit;width:100%;padding:12px;border-radius:14px;border:2px soli
 // Orden de aprendizaje: una letra por nivel
 const ORDER='a e i o u l m s n h d f p t r b v ñ y k c z q g j w x ll ch'.split(' ');
 // Palabras de cada nivel (solo letras ya aprendidas). Formato: palabra+emoji opcional, separadas por espacio
-const WD={l:'ala ola aula',m:'mama mula lima malo',s:'sol☀️ mesa🪑 sala isla🏝️',n:'luna🌙 mano✋ mono🐒 nena',h:'hola hilo🧵 humo💨 hueso🦴',d:'dado🎲 dedo nido🪺 mundo🌍',f:'fila fino fideo fama',p:'sopa🍲 mapa🗺️ pelo pulpo🐙',t:'pato🦆 lata🥫 tomate🍅 tinta',r:'pera🍐 rana🐸 mira pared',b:'bota👢 libro📖 nube☁️ bolsa',v:'vaso🥛 vela🕯️ uva🍇 nave🚀',ñ:'niño👦 piña🍍 baño🛁 uña',y:'yoyo yema🥚 yate🛥️ rey👑',k:'kilo⚖️ koala🐨 kayak🛶 karate🥋',c:'casa🏠 cama🛏️ cola cuna',z:'zapato👟 zumo🧃 taza luz💡',q:'queso🧀 paquete📦 quiero',g:'gato🐱 goma lago gusano🐛',j:'ojo👁️ caja jirafa🦒 tijeras✂️',w:'kiwi🥝 wifi📶 web🌐',x:'taxi🚕 texto boxeo🥊',ll:'lluvia🌧️ llave🔑 silla pollo🍗',ch:'leche🥛 coche🚗 noche mochila🎒'};
+const WD={l:'ala ola aula',m:'mama mula lima malo',s:'sol☀️ mesa🪑 sala isla🏝️',n:'luna🌙 mano✋ mono🐒 nena',h:'hola hilo🧵 humo💨 hueso🦴',d:'dado🎲 dedo nido🪺 mundo🌍 dime nada lodo mide',f:'fila fino fideo fama sofá🛋️ fuma foso fiel',p:'sopa🍲 mapa🗺️ pelo pulpo🐙 pie🦶 pino🌲 piso pasa',t:'pato🦆 lata🥫 tomate🍅 tinta tela tapa tema tuna🌵',r:'pera🍐 rana🐸 mira pared rosa🌹 ropa👕 remo oro🪙',b:'bota👢 libro📖 nube☁️ bolsa bola beso bufanda🧣 barba',v:'vaso🥛 vela🕯️ uva🍇 nave🚀 ave🐦 vena volar nevar',ñ:'niño👦 piña🍍 baño🛁 uña niña leña año moño🎀',y:'yoyo yema🥚 yate🛥️ rey👑 rayo⚡ mayo yeso ayuda',k:'kilo⚖️ koala🐨 kayak🛶 karate🥋',c:'casa🏠 cama🛏️ cola cuna vaca🐄 copa mico🐒 taco🌮',z:'zapato👟 zumo🧃 taza luz💡 zona cazo cena🍽️ lazo🎀',q:'queso🧀 paquete📦 quiero quema🔥 quita poquito tequila',g:'gato🐱 goma lago gusano🐛',j:'ojo👁️ caja jirafa🦒 tijeras✂️',w:'kiwi🥝 wifi📶 web🌐',x:'taxi🚕 texto boxeo🥊',ll:'lluvia🌧️ llave🔑 silla pollo🍗',ch:'leche🥛 coche🚗 noche mochila🎒'};
 // Sílabas de cada nivel (se practican entre las letras y las palabras). Sin entrada = sin sílabas
 const SYL={l:'la le li lo lu',m:'ma me mi mo mu',s:'sa se si so su',n:'na ne ni no nu',h:'ha he hi ho hu',d:'da de di do du',f:'fa fe fi fo fu',p:'pa pe pi po pu',t:'ta te ti to tu',r:'ra re ri ro ru',b:'ba be bi bo bu',v:'va ve vi vo vu',ñ:'ña ñe ñi ño ñu',y:'ya ye yi yo yu',k:'ka ke ki ko ku',c:'ca co cu',z:'za ze zi zo zu ce ci',q:'que qui',g:'ga go gu gue gui',j:'ja je ji jo ju ge gi',w:'wa we wi',ll:'lla lle lli llo llu',ch:'cha che chi cho chu'};
 // Niveles extra tras las letras: sílabas inversas y trabadas. g = etiqueta corta del botón, t = título, s = sílabas, w = palabras
@@ -262,7 +280,35 @@ const TX0=[
 ['En mi país hay un río.','¿Qué hay en mi país?',['🏞️','🌋'],'ío'],
 ['Mi mamá come maíz.','¿Qué come mamá?',['🌽','🍎'],'ío'],
 ['El baúl es azul.','¿De qué color es el baúl?',['💙','❤️'],'ío'],
-['A mi papá le gusta leer.','¿Qué le gusta a papá?',['📖','⚽'],'ío']];
+['A mi papá le gusta leer.','¿Qué le gusta a papá?',['📖','⚽'],'ío'],
+['Mi mamá mide la sala.','¿Qué mide mamá?',['📏','🍎']],
+['La nena sale de la sala.','¿De dónde sale la nena?',['🛋️','🌳']],
+['Mi mamá me da la sopa.','¿Qué me da mamá?',['🍲','🍎']],
+['El sofá es de mi mamá.','¿De quién es el sofá?',['👩','👨']],
+['Fina sale de la sala.','¿Quién sale de la sala?',['👧','🐘']],
+['Papá me pasa la sopa.','¿Qué me pasa papá?',['🍲','🍎']],
+['Pepe pone un pino en la isla.','¿Qué pone Pepe?',['🌲','🍎']],
+['Mi mamá tapa la sopa.','¿Qué tapa mamá?',['🍲','🍎']],
+['La nena toma la tuna.','¿Qué toma la nena?',['🌵','🍎']],
+['Mi mamá tiene una rosa.','¿Qué tiene mamá?',['🌹','🍎']],
+['Mamá pone la ropa en la sala.','¿Qué pone mamá?',['👕','🍎']],
+['El remo es de mi papá.','¿De quién es el remo?',['👨','👩']],
+['La bola es de la nena.','¿De quién es la bola?',['👧','👦']],
+['La bufanda es de mi mamá.','¿De quién es la bufanda?',['👩','👨']],
+['El ave nada en el mar.','¿Quién nada en el mar?',['🐦','🐻']],
+['Mi nena vive en la isla.','¿Dónde vive mi nena?',['🏝️','🏔️']],
+['La niña pone la leña.','¿Qué pone la niña?',['🪵','🍎']],
+['Mi mamá tiene un moño.','¿Qué tiene mamá?',['🎀','🍎']],
+['Hoy tomo sopa y pan.','¿Qué tomo hoy?',['🍲','🍎']],
+['Mi mamá me ayuda en la sala.','¿Quién me ayuda?',['👩','👨']],
+['Kiko toma un kilo de uvas.','¿Qué toma Kiko?',['🍇','🍎']],
+['La vaca come pasto.','¿Qué come la vaca?',['🌿','🍔']],
+['Mi mamá toma café.','¿Qué toma mamá?',['☕','🥛']],
+['El mico come uvas.','¿Quién come uvas?',['🐒','🐘']],
+['El cazo es azul.','¿De qué color es el cazo?',['💙','❤️']],
+['La luz es del sol.','¿De qué es la luz?',['☀️','🌙']],
+['Mamá quita la sopa de la mesa.','¿Qué quita mamá?',['🍲','🍎']],
+['El mico quiere queso.','¿Quién quiere queso?',['🐒','🐘']]];
 const TX=TX0.map(([x,q,o,g],i)=>({i,x,q,o,n:(x.match(/\./g)||[]).length,l:Math.max(...x.toLowerCase().match(/ll|ch|rr|[a-zñü]/g).map(u=>ORDER.indexOf(u)).concat(g?[ORDER.length+EXTRA.findIndex(e=>e.g==g)]:[]))}));
 let lastX=null;
 const FR_FROM=14; // desde este nivel (0 = A; 14 = R, la mitad de las letras) se añade una frase o lectura al final de cada nivel
@@ -297,7 +343,7 @@ const pr=()=>P.ps[P.c];
 // Repaso espaciado: caja 0-5; intervalos: ya, 10 min, 1 día, 3 días, 7 días, 14 días
 const INT=[0,6e5,864e5,2592e5,6048e5,12096e5];
 const stat=u=>(pr().s=pr().s||{})[u]||{b:0,d:0};
-function rec(u,ok){const p=pr();p.s=p.s||{};const s=stat(u);s.b=ok?Math.min(s.b+1,5):0;s.d=Date.now()+INT[s.b];p.s[u]=s;save()}
+function rec(u,ok){const p=pr();p.s=p.s||{};const s=stat(u);s.b=ok?Math.min(s.b+1,5):0;s.d=Date.now()+INT[s.b];p.s[u]=s;const r=(p.er=p.er||{})[u]||{a:0,e:0};r.a++;if(!ok)r.e++;p.er[u]=r;acc1(ok);save()}
 let lastT=null;
 function nextLetter(known){const now=Date.now(),ok=known.filter(u=>u!==lastT||known.length==1),due=ok.filter(u=>stat(u).d<=now);let t;
  if(due.length){const w=due.map(u=>6-stat(u).b);let r=Math.random()*w.reduce((a,b)=>a+b,0),k=0;while((r-=w[k])>0)k++;t=due[k]}
@@ -326,7 +372,7 @@ function home(){AD=0;const p=pr();if(!p)return profiles();hdr();const n=dueList(
 <button class="hm-a in" style="animation-delay:.16s" onclick="practice()"><span class="ib2">${ic('target',24)}</span><div><b>Practicar</b><small>Juega con lo que ya sabes</small></div>${ic('chev',22)}</button>
 ${n?`<button class="hm-a rv in" style="animation-delay:.24s" onclick="review()"><span class="ib2">${ic('refresh',24)}</span><div><b>Repasar</b><small>${n} ${n==1?'elemento':'elementos'} por repasar</small></div>${ic('chev',22)}</button>`:''}
 <div class="hm-g in" style="animation-delay:.32s"><button class="hm-s" onclick="album()">${ic('image',22)}Mi álbum</button><button class="hm-s" onclick="map()">${ic('map',22)}Mapa de letras</button></div>
-<button class="hm-ad in" style="animation-delay:.4s" onclick="adults()">${ic('lock',16)} Zona del tutor</button>`)}
+<button class="hm-ad in" style="animation-delay:.4s" onclick="adults()">${ic('lock',16)} Zona del tutor${bkDue()?'<i class="bkdot" role="img" aria-label="Copia de seguridad pendiente"></i>':''}</button>`)}
 function dueList(){const n=Date.now();return Object.entries(pr().s||{}).filter(([k,v])=>v.d<=n).map(x=>x[0])}
 function review(){const ks=shuf(dueList()).slice(0,6),all=sylsTo(pr().lv);let n=0;
  const nx=()=>{if(n>=ks.length)return draw(BACK+'<div class="stage"><div class="pic">🌟</div><h2>¡Repaso hecho!</h2><div class="row"><button class="btn" onclick="home()">Inicio</button></div></div>');
@@ -341,20 +387,20 @@ function panel(t){AD=1;if(t!=null)PT=t;const p=pr(),
  fbx='<div class="fb" id="fb" style="white-space:pre-line"></div>';
  let b='';
  if(PT==0)b=progreso(p);
- else if(PT==1)b=`<div class="cd"><div class="ct">📖 Lectura</div><span class="lb">Trazo de letras</span><div class="rw">${sel('tz',[['M','Mayúsculas'],['m','Minúsculas'],['2','Ambas']],p.tz||'M')}<button class="btn alt sm" onclick="setTz()">Aplicar</button></div><span class="lb">Nivel</span><div class="rw">${sel('lvs',LV.map((l,i)=>[i,`${i+1}. ${l.g}`]),p.lv)}<button class="btn alt sm" onclick="sure(this,setLv)">Aplicar</button></div></div>
+ else if(PT==1)b=`<div class="cd"><div class="ct">📖 Lectura</div><span class="lb">Trazo de letras</span><div class="rw">${sel('tz',[['M','Mayúsculas'],['m','Minúsculas'],['2','Ambas']],p.tz||'M')}<button class="btn alt sm" onclick="setTz()">Aplicar</button></div><span class="lb">Nivel</span><div class="rw">${sel('lvs',LV.map((l,i)=>[i,`${i+1}. ${l.g}`]),p.lv)}<button class="btn alt sm" onclick="sure(this,setLv)">Aplicar</button></div><span class="lb">Lectura en voz alta</span><div class="rw">${sel('rm',[['m','Con micrófono'],['t','Validada por el tutor']],p.rm||'m')}<button class="btn alt sm" onclick="setRm()">Aplicar</button></div><p class="pg-nt" style="margin:8px 0 0">Con micrófono, el reconocimiento de voz de Chrome envía el audio a los servidores de Google. «Validada por el tutor» no usa el micrófono: usted marca si lo ha leído bien.</p></div>
 <div class="cd"><div class="ct">⏳ Sesión</div><span class="lb">Duración diaria</span><div class="rw">${sel('lim',[10,15,20,30,0].map(m=>[m,m?m+' minutos':'Sin límite']),p.lim==null?15:p.lim)}<button class="btn alt sm" onclick="setLim()">Aplicar</button></div></div>
 <div class="cd"><div class="ct">🔊 Audio</div><span class="lb">Instrucciones habladas</span><div class="rw">${sel('ins',[['s','Las primeras veces'],['a','Siempre'],['n','Nunca']],gIn())}<button class="btn alt sm" onclick="setIn()">Aplicar</button></div><span class="lb">Voz del dispositivo</span><div class="rw"><select id="vz" aria-label="Voz">${vzOpts()}</select><button class="btn alt sm" onclick="setVz()">Probar</button></div><div class="g2" style="grid-template-columns:1fr"><button class="btn alt sm" onclick="micTest()">🎙️ Probar micrófono</button></div>${fbx}</div>`;
  else b=`<div class="cd"><div class="ct">🏫 Aula</div><div class="g2" style="grid-template-columns:1fr"><button class="btn sm" onclick="aula()">👥 Vista de aula (${P.ps.length})</button></div></div>
 <div class="cd"><div class="ct">👤 Perfil</div><div class="rw"><input id="rn" value="${p.n}" maxlength="20" aria-label="Nombre"><button class="btn alt sm" onclick="renP()">Renombrar</button></div><div class="g3"><button class="btn alt sm" onclick="profiles()">👥 Cambiar perfil</button><button class="btn dg sm" onclick="sure(this,resetP)">🔄 Reiniciar</button><button class="btn dg sm" onclick="sure(this,delP)">🗑️ Borrar</button></div></div>
-<div class="cd"><div class="ct">💾 Copias de seguridad</div><div class="g2"><button class="btn sm" onclick="expo()">⬇️ Guardar copia</button><button class="btn alt sm" onclick="document.getElementById('fi').click()">⬆️ Restaurar copia</button></div><input type="file" id="fi" accept=".json,application/json" hidden onchange="impo(this.files[0])"><div class="row" id="nx"></div></div>
+<div class="cd"><div class="ct">💾 Copias de seguridad</div><span class="lb" style="margin-top:0">${bkTxt()}</span><div class="g2"><button class="btn sm" onclick="expo()">⬇️ Guardar copia</button><button class="btn alt sm" onclick="document.getElementById('fi').click()">⬆️ Restaurar copia</button></div><input type="file" id="fi" accept=".json,application/json" hidden onchange="impo(this.files[0])"><div class="row" id="nx"></div></div>
 <div class="cd"><div class="ct">ℹ️ Sistema</div><p style="margin:4px 0 0">Lectori · versión <b>${VER}</b></p><div class="g2"><button class="btn alt sm" onclick="chkVer()">Buscar actualización</button><button class="btn sm" onclick="updNow()">Actualizar ahora</button></div>${fbx}</div>`;
  draw(head+b)}
 function setLv(){const p=pr();p.lv=+document.getElementById('lvs').value;save();hdr();panel()}
 function renP(){const n=document.getElementById('rn').value.replace(/[<>&"'`]/g,'').trim();if(!n)return;pr().n=n;save();hdr();fb('Nombre cambiado','ok')}
-function expo(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({v:1,d:new Date().toISOString(),P})],{type:'application/json'}));a.download='copia-aprende-a-leer.json';a.click();fb('Copia guardada en Descargas. Guárdela en un sitio seguro.','ok')}
+function expo(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({v:1,d:new Date().toISOString(),P})],{type:'application/json'}));a.download='copia-aprende-a-leer.json';a.click();try{localStorage.setItem('arbk',Date.now())}catch(e){}fb('Copia guardada en Descargas. Guárdela en un sitio seguro.','ok')}
 let pend=null;
-function impo(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result),ps=((o.P||{}).ps||[]).map(p=>({n:String(p.n||'').replace(/[<>&"'`]/g,'').slice(0,20)||'Niño',lv:Math.max(0,Math.min(LV.length-1,+p.lv||0)),st:Math.max(0,+p.st||0),lim:[0,10,15,20,30].includes(p.lim)?p.lim:15,tz:['M','m','2'].includes(p.tz)?p.tz:'M',vl:(Array.isArray(p.vl)?p.vl:[]).filter(v=>v&&typeof v.s=='number').slice(-100).map(v=>({d:String(v.d||''),n:v.n|0,s:+v.s,w:+v.w||0,e:+v.e||0})),ev:(Array.isArray(p.ev)?p.ev:[]).slice(-30).map(v=>({d:String(v.d||''),lv:v.lv|0,h:String(v.h||'')})),nt:(Array.isArray(p.nt)?p.nt:[]).slice(-200).map(v=>({d:String(v.d||''),x:String(v.x||'').slice(0,600)})),hf:Object.fromEntries(Object.entries(p.hf||{}).filter(([k,v])=>typeof v=='number').map(([k,v])=>[k,v|0])),rd:Object.fromEntries(Object.entries(p.rd||{}).filter(([k,v])=>v&&typeof v.n=='number').map(([k,v])=>[k,{n:v.n|0,l:+v.l||0,b:+v.b||0,d:String(v.d||'')}])),d:Object.fromEntries(Object.entries(p.d||{}).filter(([k,v])=>/^\d{4}-\d\d-\d\d$/.test(k)&&v).map(([k,v])=>[k,{t:Math.max(0,+v.t||0),s:Math.max(0,+v.s||0)}])),s:Object.fromEntries(Object.entries(p.s||{}).filter(([k,v])=>v&&typeof v.d=='number').map(([k,v])=>[k,{b:Math.max(0,Math.min(5,v.b|0)),d:v.d}]))}));if(!ps.length)throw 0;pend=ps;document.getElementById('nx').innerHTML=`<button class="btn" onclick="applyImp()">Confirmar: reemplazar por ${ps.length} perfil(es)</button>`;fb('Copia leída. Se reemplazarán los perfiles actuales.')}catch(e){fb('El archivo no es una copia válida.','no')}};r.readAsText(f)}
-function applyImp(){if(!pend)return;P={ps:pend,c:0};pend=null;save();home()}
+function impo(f){if(!f)return;const r=new FileReader();r.onload=()=>{try{const o=JSON.parse(r.result),ps=((o.P||{}).ps||[]).map(p=>({n:String(p.n||'').replace(/[<>&"'`]/g,'').slice(0,20)||'Niño',lv:Math.max(0,Math.min(LV.length-1,+p.lv||0)),st:Math.max(0,+p.st||0),lim:[0,10,15,20,30].includes(p.lim)?p.lim:15,tz:['M','m','2'].includes(p.tz)?p.tz:'M',vl:(Array.isArray(p.vl)?p.vl:[]).filter(v=>v&&typeof v.s=='number').slice(-100).map(v=>({d:String(v.d||''),n:v.n|0,s:+v.s,w:+v.w||0,e:+v.e||0})),ev:(Array.isArray(p.ev)?p.ev:[]).slice(-30).map(v=>({d:String(v.d||''),lv:v.lv|0,h:String(v.h||'')})),es:(Array.isArray(p.es)?p.es:[]).slice(-8).map(v=>({d:String(v.d||''),N:v.N|0,rec:v.rec|0,r:(Array.isArray(v.r)?v.r:[]).slice(0,200).map(x=>[String(x[0]||'').slice(0,4),String(x[1]||'').slice(0,40),x[2]?1:0,x[3]|0,x[4]|0,x[5]|0,x[6]?1:0])})),rm:p.rm=='t'?'t':'m',er:Object.fromEntries(Object.entries(p.er||{}).filter(([k,v])=>v&&typeof v.a=='number').map(([k,v])=>[k,{a:v.a|0,e:v.e|0}])),nt:(Array.isArray(p.nt)?p.nt:[]).slice(-200).map(v=>({d:String(v.d||''),x:String(v.x||'').slice(0,600)})),hf:Object.fromEntries(Object.entries(p.hf||{}).filter(([k,v])=>typeof v=='number').map(([k,v])=>[k,v|0])),rd:Object.fromEntries(Object.entries(p.rd||{}).filter(([k,v])=>v&&typeof v.n=='number').map(([k,v])=>[k,{n:v.n|0,l:+v.l||0,b:+v.b||0,d:String(v.d||'')}])),d:Object.fromEntries(Object.entries(p.d||{}).filter(([k,v])=>/^\d{4}-\d\d-\d\d$/.test(k)&&v).map(([k,v])=>[k,{t:Math.max(0,+v.t||0),s:Math.max(0,+v.s||0),a:Math.max(0,+v.a||0),o:Math.max(0,+v.o||0)}])),s:Object.fromEntries(Object.entries(p.s||{}).filter(([k,v])=>v&&typeof v.d=='number').map(([k,v])=>[k,{b:Math.max(0,Math.min(5,v.b|0)),d:v.d}]))}));if(!ps.length)throw 0;pend=ps;document.getElementById('nx').innerHTML=`<button class="btn" onclick="applyImp()">Confirmar: reemplazar por ${ps.length} perfil(es)</button>`;fb('Copia leída. Se reemplazarán los perfiles actuales.')}catch(e){fb('El archivo no es una copia válida.','no')}};r.readAsText(f)}
+function applyImp(){if(!pend)return;P={ps:pend,c:0};pend=null;save();try{localStorage.setItem('arbk',Date.now())}catch(e){}home()}
 async function micTest(){const o=[];
  o.push('Dentro de otra página: '+(window.top!==window?'sí':'no'));
  try{const pp=document.permissionsPolicy||document.featurePolicy;o.push('Política de la página: '+(pp&&pp.allowsFeature?(pp.allowsFeature('microphone')?'micrófono permitido':'micrófono NO permitido'):'sin datos'))}catch(e){o.push('Política de la página: sin datos')}
@@ -498,22 +544,93 @@ function velRun(n){AD=1;const t=VT[n-1],W=t.x.split(/\s+/).length;let t0=0,iv,er
   $('#st').onclick=()=>{clearInterval(iv);s=Math.round((performance.now()-t0)/100)/10;$('#tm').textContent=mmss(s);$('#bt').innerHTML='';res()}}}
 function velHist(n){AD=1;const p=pr(),L=(p.vl||[]).filter(v=>v.n==n),best=Math.max(0,...L.map(cwpm));
  draw(`<div class="nav"><button class="back" onclick="vel()">← Velocidad</button></div><div class="stage" style="text-align:left"><h2 style="margin:0 0 6px">Nivel ${n} · historial</h2>${L.length?`<p><small>Mejor marca: <b>${best}</b> palabras correctas por minuto. Columnas: fecha, tiempo, errores, p/min, cambio.</small></p>`:'<p>Aún no hay pruebas.</p>'}${L.map((v,i)=>{const c=cwpm(v),pv=L[i-1];return `<div class="r2"><span>${dm(v.d)}</span><b>${mmss(v.s)}</b><span>${v.e} err.</span><b>${c}</b><span>${pv?(c>cwpm(pv)?'▲':c<cwpm(pv)?'▼':'='):''}</span></div>`}).reverse().join('')}<div class="row"><button class="btn" onclick="velRun(${n})">Nueva prueba</button></div></div>`)}
-const CK=[[0,4],[5,8],[9,12],[13,16],[17,22],[23,28],[29,37],[38,43],[44,44]];
-function evItems(lo,hi){hi=Math.min(hi,LV.length-1);const lt=[],sy=[],wo=[];
- for(let i=lo;i<=hi;i++){const l=LV[i];if(i<ORDER.length)lt.push(cap(l.g)+' '+l.g);l.s.forEach(s=>sy.push(s));l.w.forEach(w=>wo.push(w[0]))}
+/* Evaluación lectora: categorías, criterio de techo, tipos de error e informe diagnóstico */
+const EV_CAT=[
+{n:'Letras y grafemas',s:[['lb','Letras: vocales y consonantes básicas'],['lc','Grafemas complejos']]},
+{n:'Sílabas',s:[['sd','Sílabas directas (CV)'],['si','Sílabas inversas (VC)'],['st','Sílabas trabadas (CCV y CCVC)']]},
+{n:'Palabras',s:[['pw','Palabras frecuentes y regulares'],['ps','Pseudopalabras']]},
+{n:'Frases y textos',s:[['fo','Oraciones sencillas'],['fm','Microtextos']]}];
+const EV_T=[60,85],EV_ERR=['Sin indicar','Sustitución','Omisión','Inversión','Titubeo o silabeo'];
+const PSE=[['tolu'],['pime'],['sanu'],['bipa'],['dufo'],['nepi'],['fupo'],['lemi'],['ulpe','ul'],['elta','el'],['osmi','os'],['arbu','ar'],['brapi','bra'],['clomi','clo'],['plisa','pli'],['grelu','gre']];
+const MICRO=[
+{x:'La nena toma un paraguas. Hoy llueve en la calle.',q1:'¿Qué toma la nena?',a1:'Un paraguas',q2:'¿Por qué toma el paraguas?',a2:'Porque llueve'},
+{x:'Tito no come la sopa. La sopa está muy caliente.',q1:'¿Qué no come Tito?',a1:'La sopa',q2:'¿Por qué no la come?',a2:'Porque está muy caliente'},
+{x:'El perro corre a la puerta. Su dueño llega a casa.',q1:'¿A dónde corre el perro?',a1:'A la puerta',q2:'¿Por qué corre?',a2:'Porque llega su dueño'},
+{x:'Ana tiene un globo rojo. El globo sube al cielo. Ana está triste.',q1:'¿De qué color es el globo?',a1:'Rojo',q2:'¿Por qué está triste Ana?',a2:'Porque el globo se ha ido'}];
+const CCVC=['tren','plan','cruz','flor','bron','grin','blan'],CPLX=['ñ','ch','ll','rr','que','qui','gue','gui'];
+const lvSyl=sy=>LV.findIndex(l=>l.s.includes(sy));
+const lvLet=t=>Math.max(0,...t.toLowerCase().match(/ll|ch|rr|[a-zñü]/g).map(x=>{const i=ORDER.indexOf(x);return i<0?LV.findIndex(l=>l.g==x):i}));
+let EV=null;
+function evBuild(){const M=[],add=(c,s,disp,lv,o)=>M.push(Object.assign({c,s,disp,lv,k:0},o||{})),ix=x=>ORDER.indexOf(x),pick=(a,n)=>shuf(a).slice(0,n).sort((p,q)=>ix(p)-ix(q));
+ ['a','e','i','o','u',...pick(['l','m','s','n','d','p','t','r','b','v'],5)].forEach(x=>add(0,'lb',cap(x)+' '+x,ix(x)));
+ CPLX.forEach(x=>add(0,'lc',x,lvLet(x)));
+ [...pick(['l','m','s','n','d','p','t'],4),...pick(['r','b','v','f','h','ñ','y'],3),...pick(['c','z','k','q','g','j','ll','ch'],3)].forEach(c=>{const L=LV[ix(c)].s,sy=L[rand(L.length)];add(1,'sd',sy,lvSyl(sy))});
+ ['al','as','am'].forEach(g=>shuf(LV.find(l=>l.x&&l.g==g).s).slice(0,2).forEach(sy=>add(1,'si',sy,lvSyl(sy))));
+ shuf(['bl','cl','fl','gl','dr','pl']).slice(0,5).forEach(g=>{const L=LV.find(l=>l.x&&l.g==g).s,sy=L[rand(L.length)];add(1,'st',sy,lvSyl(sy))});
+ shuf(CCVC).slice(0,3).forEach(w=>add(1,'st',w,Math.max(0,lvSyl(w.slice(0,3)))));
+ const WL=[];LV.forEach((l,i)=>l.w.forEach(w=>WL.push({w:w[0],lv:i})));const gr=(a,b)=>WL.filter(x=>x.lv>=a&&x.lv<=b);
+ shuf(HFL).slice(0,4).sort((p,q)=>p.l-q.l).forEach(x=>add(2,'pw',x.w,x.l));
+ [...shuf(gr(5,13)).slice(0,2),...shuf(gr(14,22)).slice(0,2),...shuf(gr(23,99)).slice(0,2)].forEach(x=>add(2,'pw',x.w,x.lv));
  const pk=(a,n)=>shuf(a).slice(0,n);
- if(!sy.length&&!wo.length)return pk(lt,5);
- return lt.length?[...pk(lt,2),...pk(sy,2),...pk(wo,2)]:[...pk(sy,3),...pk(wo,3)]}
-function evl(){AD=1;const p=pr(),H=(p.ev||[]).slice(-5).reverse();
- draw(BK+`<div class="stage" style="text-align:left"><h2 style="margin:0 0 6px">📋 Evaluación de nivel</h2><p><small>El niño lee en voz alta cada elemento y usted marca ✔ o ✘. Se detiene en el primer bloque que no supera. Dura unos 3-5 minutos y se puede repetir cuando quiera.</small></p><div class="row"><button class="btn" onclick="evRun(0,[])">Empezar</button></div>${H.length?`<h3>Anteriores</h3>${H.map(v=>`<div class="r2"><span>${dm(v.d)}</span><b>${LV[v.lv]?LV[v.lv].g:''}</b><span style="grid-column:span 3">${v.h}</span></div>`).join('')}`:''}</div>`)}
-function evRun(c,res){AD=1;const [lo,hi]=CK[c],it=evItems(lo,hi),mk=it.map(()=>0),need=Math.ceil(it.length*.8);
- draw(BK+`<div class="stage"><p class="fb" style="margin:0">Bloque ${c+1} de ${CK.length}</p><p><small>Que lea cada uno en voz alta</small></p>${it.map((x,i)=>`<div class="ev"><span class="evt">${x}</span><button class="btn alt sm" id="y${i}">✔</button><button class="btn alt sm" id="n${i}">✘</button></div>`).join('')}<div class="fb" id="fb"></div><div class="row"><button class="btn" id="nx2">Continuar ➜</button></div></div>`);
- const upd=()=>{it.forEach((x,i)=>{$('#y'+i).style.background=mk[i]==1?'var(--accent)':'';$('#n'+i).style.background=mk[i]==2?'var(--bad)':''});fb(`${mk.filter(v=>v==1).length} de ${it.length} acertados (hacen falta ${need})`)};
- upd();it.forEach((x,i)=>{$('#y'+i).onclick=()=>{mk[i]=1;upd()};$('#n'+i).onclick=()=>{mk[i]=2;upd()}});
- $('#nx2').onclick=()=>{const ok=mk.filter(v=>v==1).length,pass=ok>=need,r=[...res,ok+'/'+it.length];
-  if(pass&&c<CK.length-1)return evRun(c+1,r);evEnd(pass?Math.min(hi+1,LV.length-1):lo,r)}}
-function evEnd(est,r){const p=pr();(p.ev=p.ev||[]).push({d:key(),lv:est,h:r.join(' · ')});p.ev=p.ev.slice(-30);save();
- draw(BK+`<div class="stage" style="text-align:left"><h2 style="margin:0 0 6px">Resultado</h2><p>Nivel estimado: <b>${LV[est].g}</b> (${est+1} de ${LV.length})</p><p><small>Bloques: ${r.join(' · ')}</small></p><div class="row"><button class="btn sm" onclick="sure(this,()=>evApply(${est}))">Aplicar este nivel al perfil</button></div><p><small>Ahora el perfil está en: ${LV[p.lv].g}. Aplicarlo desbloquea o bloquea niveles. El resultado ya queda guardado.</small></p></div>`)}
+ [...pk(PSE.slice(0,8),4),...pk(PSE.slice(8,12),2),...pk(PSE.slice(12),2)].forEach(([w,k])=>add(2,'ps',w,k?lvSyl(k):lvLet(w),{tag:1}));
+ const O=TX.filter(t=>t.n==1),og=(a,b)=>shuf(O.filter(t=>t.l>=a&&t.l<=b))[0];
+ [og(0,13),og(14,22),og(23,99)].filter(Boolean).forEach(t=>{add(3,'fo',t.x,t.l,{k:1});add(3,'fo',t.q,t.l,{k:2,txt:t.x,a:t.o[0]})});
+ shuf(MICRO).slice(0,3).forEach(m=>{const l=lvLet(m.x);add(3,'fm',m.x,l,{k:1});add(3,'fm',m.q1,l,{k:2,txt:m.x,a:m.a1});add(3,'fm',m.q2,l,{k:3,txt:m.x,a:m.a2})});
+ return M}
+function evl(){AD=1;const p=pr(),es=p.es||[],old=(p.ev||[]).slice(0,Math.max(0,(p.ev||[]).length-es.length));
+ draw(BK+`<div class="stage" style="text-align:left"><h2 style="margin:0 0 6px">Evaluación lectora</h2><p><small>El alumno lee en voz alta cada elemento (letras, sílabas, palabras, pseudopalabras y textos) y usted marca ✓ o ✗. Si falla varias veces seguidas en una categoría, esa parte se detiene y se pasa a la siguiente. Al final se genera un informe con el perfil lector y el punto del itinerario recomendado. Dura entre 5 y 10 minutos y se puede repetir cuando quiera.</small></p><span class="lb">Parar una categoría tras</span><div class="rw"><select id="evn" aria-label="Errores seguidos"><option value="3">3 errores seguidos</option><option value="4">4 errores seguidos</option></select><button class="btn sm" onclick="evStart()">Empezar</button></div>${es.length||old.length?`<h3>Evaluaciones anteriores</h3>${es.map((v,i)=>({v,i})).reverse().map(({v,i})=>`<button class="au" style="grid-template-columns:1fr 1.3fr auto" onclick="evView(${i})"><b>${dm(v.d)}</b><span>${LV[v.rec]?esc(LV[v.rec].g):''}</span><span>Ver informe</span></button>`).join('')}${old.map(v=>`<div class="au" style="grid-template-columns:1fr 1.3fr"><b>${dm(v.d)}</b><span>${esc(LV[v.lv]?LV[v.lv].g:'')} <small>(formato anterior)</small></span></div>`).join('')}`:''}</div>`)}
+function evStart(){EV={M:evBuild(),i:0,N:+document.getElementById('evn').value||3,cons:0,res:[],hist:[]};evShow()}
+function evShow(){if(!EV||EV.i>=EV.M.length)return evFin();
+ const m=EV.M[EV.i],cat=EV_CAT[m.c],sec=cat.s.find(x=>x[0]==m.s)[1],inC=EV.M.filter(x=>x.c==m.c),idx=inC.indexOf(m)+1,
+ body=m.k==0?`<div class="ev2-it${m.tag?' ps':''}">${esc(m.disp)}</div>${m.tag?'<p class="rp-mu" style="text-align:center;margin:0 0 6px">Pseudopalabra: no existe, léela igualmente.</p>':''}`
+ :m.k==1?`<div class="ev2-tx">${esc(m.disp)}</div><p class="rp-mu">Lectura: ¿lee con precisión y con fluidez?</p>`
+ :`<div class="ev2-tx sm">${esc(m.txt)}</div><div class="ev2-qc"><b>${m.k==2?'Comprensión literal':'Comprensión inferencial'}</b><p>${esc(m.disp)}</p><small>Respuesta esperada: <b>${esc(m.a)}</b></small></div>`;
+ draw(`<div class="nav2"><button class="back" onclick="evl()">← Evaluación</button><button class="btn alt sm" onclick="evFin()">Terminar ahora</button></div><div class="stage" style="text-align:left"><div class="ct" style="margin:0">${cat.n}</div><small style="opacity:.75">${sec}</small><div class="bar"><i style="width:${Math.round((idx-1)/inC.length*100)}%"></i></div><div class="ev2-meta"><span>Elemento ${idx} de ${inC.length}</span><span class="ev2-dots" aria-label="Errores seguidos">${[...Array(EV.N)].map((_,k)=>`<i class="${k<EV.cons?'f':''}"></i>`).join('')}</span></div>${body}<div class="ev2-b" id="evb"><button class="ev2-ok" onclick="evMark(1)">${ic('tick',24)} Correcto</button><button class="ev2-ko" onclick="evMark(0)">${ic('x',24)} Incorrecto</button></div><div id="evx"></div>${EV.res.length?'<button class="back" style="margin-top:6px" onclick="evUndo()">↩ Deshacer la última</button>':''}</div>`)}
+function evMark(ok){const m=EV.M[EV.i];EV.hist.push({i:EV.i,cons:EV.cons,n:EV.res.length});ok?EV.cons=0:EV.cons++;
+ const stp=!ok&&EV.cons>=EV.N;EV.res.push({m,ok:ok?1:0,e:0,stp:stp?1:0});
+ if(ok||(m.k>=2&&!stp))return evNext(stp);
+ document.getElementById('evb').style.display='none';
+ document.getElementById('evx').innerHTML=`<div class="ev2-er">${m.k<2?`<small>Tipo de error (opcional)</small><div class="wkr">${EV_ERR.slice(1).map((t,i)=>`<button class="pg-ch" onclick="evErr(${i+1})">${t}</button>`).join('')}</div>`:''}<div class="row"><button class="btn alt sm" onclick="evErr(0)">${stp?'Continuar':'Siguiente'}</button></div>${stp?`<p class="pg-nt">Se han alcanzado ${EV.N} errores seguidos: se detiene esta categoría para no frustrar al alumno.</p>`:''}</div>`}
+function evErr(t){const r=EV.res[EV.res.length-1];r.e=t;evNext(r.stp)}
+function evNext(stp){const m=EV.M[EV.i];let j=EV.i+1;if(stp)while(j<EV.M.length&&EV.M[j].c==m.c)j++;if(j<EV.M.length&&EV.M[j].c!=m.c)EV.cons=0;EV.i=j;evShow()}
+function evUndo(){const h=EV.hist.pop();if(!h)return;EV.i=h.i;EV.cons=h.cons;EV.res.length=h.n;evShow()}
+function evFin(){if(!EV)return evl();const r=EV.res.map(x=>[x.m.s,String(x.m.disp).slice(0,40),x.ok,x.e,x.m.lv,x.m.k,x.stp]);
+ if(!r.length){EV=null;return evl()}
+ const p=pr(),ses={d:key(),N:EV.N,r},S=evStats(r),rec=evRec(r,S);ses.rec=rec;
+ (p.es=p.es||[]).push(ses);p.es=p.es.slice(-8);
+ (p.ev=p.ev||[]).push({d:ses.d,lv:rec,h:S.cats.map(c=>c.n.split(' ')[0]+' '+(c.a?Math.round(c.o/c.a*100)+' %':'—')).join(' · ')});p.ev=p.ev.slice(-30);
+ save();EV=null;evReport(ses)}
+function evView(i){evReport((pr().es||[])[i])}
+function evStats(r){const secs={};EV_CAT.forEach(c=>c.s.forEach(([id,n])=>secs[id]={n,a:0,o:0,k:{1:[0,0],2:[0,0],3:[0,0]},bad:[]}));
+ const cats=EV_CAT.map(c=>({n:c.n,a:0,o:0,stp:false})),err=[0,0,0,0,0];
+ r.forEach(([s,d,ok,e,lv,k,stp])=>{const sc=secs[s],ct=cats[EV_CAT.findIndex(c=>c.s.some(x=>x[0]==s))];sc.a++;ct.a++;if(ok){sc.o++;ct.o++}else if(k<2){err[e]++;sc.bad.push([d,lv,e])}
+  if(k>0){sc.k[k][0]++;if(ok)sc.k[k][1]++}if(stp)ct.stp=true});
+ return{secs,cats,err}}
+function evRec(r,S){S=S||evStats(r);let mx=0,c=[];Object.keys(S.secs).forEach(id=>{const sc=S.secs[id];if(!sc.a)return;const it=r.filter(x=>x[0]==id&&x[5]<2);it.forEach(x=>mx=Math.max(mx,x[4]));
+  if(sc.o/sc.a*100<EV_T[1]){const f=it.filter(x=>!x[2]).map(x=>x[4]);if(f.length)c.push(Math.min(...f))}});
+ return c.length?Math.min(...c):Math.min(mx+1,LV.length-1)}
+function evReport(ses){if(!ses)return evl();AD=1;const p=pr(),r=ses.r,S=evStats(r),rec=ses.rec!=null?ses.rec:evRec(r,S),sc=S.secs,
+ pc=x=>x.a?Math.round(x.o/x.a*100):null,lab=x=>x.a?(pc(x)>=EV_T[1]?['c','Consolidado']:pc(x)>=EV_T[0]?['d','En desarrollo']:['e','Emergente']):['n','No evaluada'],
+ fr=x=>x.a?`${x.o}/${x.a} (${pc(x)} %)`:'no evaluado',fk=(x,k)=>x.k[k][0]?`${x.k[k][1]}/${x.k[k][0]} (${Math.round(x.k[k][1]/x.k[k][0]*100)} %)`:'no evaluada',
+ bd=x=>x.bad.length?' No superados: '+x.bad.slice(0,8).map(y=>esc(y[0])).join(', ')+'.':'',
+ pw=sc.pw,ps=sc.ps,
+ via=(pw.a<3||ps.a<3)?'No hay datos suficientes para valorar la vía de lectura (faltan palabras o pseudopalabras).':(()=>{const a=pc(pw),b=pc(ps);return b>=a-10&&b>=60?'Predomina una vía fonológica eficaz: decodifica con soltura incluso palabras que no existen.':a-b>=20?'Se apoya más en la vía léxica (reconocimiento visual): lee mejor palabras conocidas que pseudopalabras. Conviene reforzar la decodificación sílaba a sílaba.':b<60&&a<60?'La vía fonológica está en desarrollo: tanto las palabras como las pseudopalabras necesitan apoyo.':'Rendimiento parecido en palabras ('+a+' %) y en pseudopalabras ('+b+' %).'})(),
+ fort=[],mej=[];
+ Object.values(sc).forEach(x=>{if(x.a>=3){const q=pc(x);if(q>=EV_T[1])fort.push(`${x.n} (${q} %)`);else if(q<EV_T[0])mej.push(`${x.n} (${q} %)`)}});
+ const top=S.err.slice(1).map((n,i)=>[n,i+1]).sort((a,b)=>b[0]-a[0])[0];
+ if(top&&top[0]>=3)mej.push(`Errores más frecuentes: ${EV_ERR[top[1]].toLowerCase()} (${top[0]})`);
+ if(S.err[4]>=3)mej.push('Silabeo o titubeo frecuente: conviene practicar la relectura para ganar fluidez');
+ const fall=[...new Set(r.filter(x=>!x[2]&&x[5]<2).map(x=>x[1]))].slice(0,10),stop=S.cats.filter(c=>c.stp).map(c=>c.n),L=LV[rec],
+ li=a=>a.length?a.map(x=>`<li>${x}</li>`).join(''):'<li>Sin datos suficientes en esta sesión.</li>';
+ draw(`<div class="noprint nav2"><button class="back" onclick="evl()">← Evaluación</button><button class="btn sm" onclick="window.print()">Imprimir o guardar PDF</button></div>
+<article class="rp"><div class="rp-top"><div class="rp-brand">${LOGO}<span>Lectori</span></div><div class="rp-date"><b>Informe de evaluación lectora</b><span>${dm(ses.d)}</span></div></div>
+<div class="rp-who"><div class="rp-av">${esc(p.n[0].toUpperCase())}</div><div><h1>${esc(p.n)}</h1><p>Evaluación del ${dm(ses.d)} · parada tras ${ses.N} errores seguidos</p></div></div>
+<section><h3>Resumen global</h3><div class="ev2-sum">${S.cats.map(c=>{const q=c.a?Math.round(c.o/c.a*100):0,l=lab(c);return `<div class="ev2-c"><b>${c.n}</b><span class="bd ${l[0]}">${l[1]}</span><div class="rp-bar" style="margin-top:6px"><i style="width:${q}%"></i></div><small>${c.a?c.o+' de '+c.a+' aciertos ('+q+' %)':'Sin respuestas'}${c.stp?' · prueba detenida por errores seguidos':''}</small></div>`}).join('')}</div></section>
+<section><h3>Perfil lectoescritor</h3><ul class="ev2-ul"><li><b>Letras básicas:</b> ${fr(sc.lb)}.${bd(sc.lb)}</li><li><b>Grafemas complejos (ñ, ch, ll, rr, qu, gu):</b> ${fr(sc.lc)}.${bd(sc.lc)}</li><li><b>Sílabas directas (CV):</b> ${fr(sc.sd)}.${bd(sc.sd)}</li><li><b>Sílabas inversas (VC):</b> ${fr(sc.si)}.${bd(sc.si)}</li><li><b>Sílabas trabadas (CCV y CCVC):</b> ${fr(sc.st)}.${bd(sc.st)}</li><li><b>Palabras frecuentes y regulares:</b> ${fr(sc.pw)}.${bd(sc.pw)}</li><li><b>Pseudopalabras:</b> ${fr(sc.ps)}. ${via}</li><li><b>Oraciones:</b> lectura ${fk(sc.fo,1)}; comprensión literal ${fk(sc.fo,2)}.</li><li><b>Microtextos:</b> lectura ${fk(sc.fm,1)}; comprensión literal ${fk(sc.fm,2)}; inferencial ${fk(sc.fm,3)}.</li></ul></section>
+<div class="rp-2"><section><h3>Puntos fuertes</h3><ul class="ev2-ul">${li(fort)}</ul></section><section><h3>Áreas de mejora</h3><ul class="ev2-ul">${li(mej)}</ul></section></div>
+<section class="rp-home"><h3>Recomendación de adaptación</h3><p style="margin:0">Empezar o continuar en <b>${esc(L.g)}</b> (nivel ${rec+1} de ${LV.length}${L.x?': '+esc(L.u):''}).</p>${fall.length?`<p class="rp-mu" style="margin-top:8px">Conviene repasar antes: <b>${fall.map(esc).join(', ')}</b>.</p>`:''}${stop.length?`<p class="rp-mu">La prueba se detuvo por errores seguidos en: ${stop.join(', ')}. Lo que no se evaluó no cuenta como fallo.</p>`:''}</section>
+<p class="rp-foot">Criterios: Emergente por debajo del ${EV_T[0]} %, En desarrollo del ${EV_T[0]} al ${EV_T[1]-1} %, Consolidado desde el ${EV_T[1]} %. Son señales para orientar la enseñanza, no un diagnóstico clínico. Informe generado por Lectori.</p></article>
+<div class="noprint row"><button class="btn" onclick="sure(this,()=>evApply(${rec}))">Aplicar el nivel recomendado al perfil</button></div>`)}
 function evApply(n){pr().lv=n;save();hdr();panel()}
 /* Pantalla Progreso: iconos de una sola familia (trazo), datos reales del perfil */
 const IC={
@@ -538,21 +655,39 @@ map:'<polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8"
 lock:'<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
 moon:'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
 sun:'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>',
+download:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+tick:'<polyline points="20 6 9 17 4 12"/>',
+x:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
 edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>',
 file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>'};
 const ic=(k,s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
 function progreso(p){
- const E=Object.entries(p.s||{}).sort((a,b)=>a[1].b-b[1].b||a[1].d-b[1].d),W=E.filter(([k,v])=>v.b<=1).slice(0,18),dom=E.filter(([k,v])=>v.b>=3).length,rd=Object.keys(p.rd||{}).length,n=dueList().length,nn=(p.nt||[]).length,hfa=hfAv(p).length,hfm=hfOk(p),st=streak(p),pc=Math.round(p.lv/LV.length*100),
+ const ER=p.er||{},E=Object.entries(p.s||{}).sort((a,b)=>a[1].b-b[1].b||a[1].d-b[1].d),W=E.filter(([k,v])=>v.b<=1).sort((a,b)=>((ER[b[0]]||{}).e||0)-((ER[a[0]]||{}).e||0)).slice(0,18),WW=Object.entries(ER).filter(([k,v])=>k.slice(0,2)=='w:'&&v.e>0).sort((a,b)=>b[1].e-a[1].e).slice(0,6),dom=E.filter(([k,v])=>v.b>=3).length,rd=Object.keys(p.rd||{}).length,n=dueList().length,nn=(p.nt||[]).length,hfa=hfAv(p).length,hfm=hfOk(p),st=streak(p),pc=Math.round(p.lv/LV.length*100),
   days=[...Array(7)].map((_,i)=>{const x=new Date();x.setDate(x.getDate()-((x.getDay()+6)%7)+i);const t=((p.d||{})[key(x)]||{}).t||0;return{l:'LMXJVSD'[i],m:Math.round(t/60)}}),mx=Math.max(1,...days.map(d=>d.m)),
   cd=(i,v,l)=>`<div class="pg-s">${ic(i,17)}<b>${v}</b><span>${l}</span></div>`;
- return `<div class="pg-hero"><div class="pg-lv">${LV[p.lv].g}</div><div style="flex:1;min-width:0"><small>Nivel actual</small><b>Nivel ${p.lv+1} de ${LV.length}</b><div class="bar"><i style="width:${Math.max(pc,3)}%"></i></div><small>${p.lv} ${p.lv==1?'nivel superado':'niveles superados'}</small></div></div>
-<div class="pg-at"><div class="pg-t2" style="display:flex;align-items:center;gap:6px">${ic('info',16)} Le cuesta <small>· para reforzar</small></div>${W.length?`<div class="wkr">${W.map(([k,v])=>`<button class="pg-ch${v.b==0?' f':''}" onclick="pracW('${k}')" aria-label="Practicar ${k}">${k}</button>`).join('')}</div><div class="pg-lg"><i class="dt f"></i>Falló la última vez<i class="dt"></i>Va mejorando</div><p class="pg-nt">Pulse una para practicarla con el niño. Son señales del repaso para observar y reforzar, no un diagnóstico.</p>`:'<p class="pg-nt" style="margin-top:6px">Nada que reforzar por ahora.</p>'}</div>
+ return `${bkBanner()}<div class="pg-hero"><div class="pg-lv">${LV[p.lv].g}</div><div style="flex:1;min-width:0"><small>Nivel actual</small><b>Nivel ${p.lv+1} de ${LV.length}</b><div class="bar"><i style="width:${Math.max(pc,3)}%"></i></div><small>${p.lv} ${p.lv==1?'nivel superado':'niveles superados'}</small></div></div>
+<div class="pg-at"><div class="pg-t2" style="display:flex;align-items:center;gap:6px">${ic('info',16)} Le cuesta <small>· para reforzar</small></div>${W.length?`<div class="wkr">${W.map(([k,v])=>`<button class="pg-ch${v.b==0?' f':''}" onclick="pracW('${k}')" aria-label="Practicar ${k}">${k}${(ER[k]||{}).e?`<sup>${ER[k].e}</sup>`:''}</button>`).join('')}</div><div class="pg-lg"><i class="dt f"></i>Falló la última vez<i class="dt"></i>Va mejorando</div><p class="pg-nt">${WW.length?'<b>Palabras con fallos:</b> '+WW.map(([k,v])=>esc(k.slice(2))+' ('+v.e+')').join(' · ')+'<br>':''}El número pequeño es el de fallos a la primera registrados. Pulse una para practicarla con el niño. Son señales del repaso para observar y reforzar, no un diagnóstico.</p>`:'<p class="pg-nt" style="margin-top:6px">Nada que reforzar por ahora.</p>'}</div>
 <div class="pg-rv"><span class="ib">${ic('refresh',20)}</span><div style="flex:1;min-width:0"><b>${n?n+' ':''}${n==1?'Repaso pendiente':n?'Repasos pendientes':'Repasos al día'}</b><small>Letras y sílabas que toca repasar</small></div>${n?`<button class="btn alt sm" onclick="AD=2;review()">Repasar</button>`:''}</div>
 <h3>Diagnóstico</h3><div class="pg-dx"><button class="pg-t" onclick="vel()"><span class="ib">${ic('timer',20)}</span><b>Velocidad lectora</b><small>Palabras correctas por minuto</small></button><button class="pg-t" onclick="evl()"><span class="ib">${ic('check',20)}</span><b>Evaluación de nivel</b><small>Comprueba qué sabe leer ahora</small></button></div>
-<h3>Seguimiento</h3><div class="pg-dx"><button class="pg-t" onclick="notas()"><span class="ib">${ic('edit',20)}</span><b>Notas del tutor</b><small>${nn?nn+(nn==1?' nota':' notas'):'Anotar observaciones'}</small></button><button class="pg-t" onclick="informe()"><span class="ib">${ic('file',20)}</span><b>Informe imprimible</b><small>Resumen en una página</small></button></div><h3>Actividad</h3><div class="pg-g" style="margin-top:0">${cd('clock',tm(p,0),'Hoy')}${cd('cal',days.reduce((a,d)=>a+d.m,0)+' min','Esta semana')}${cd('zap',st+(st==1?' día':' días'),'Racha')}${cd('star',p.st,'Estrellas')}${cd('award',dom,'Letras y sílabas dominadas')}${cd('book',rd,'Libros leídos')}</div>${hfa?`<div class="pg-card"><div class="pg-t2">Palabras frecuentes <small>(${hfm} de ${hfa} dominadas)</small></div><div class="bar"><i style="width:${Math.round(hfm/hfa*100)}%"></i></div></div>`:''}${days.some(d=>d.m>0)?`<div class="pg-card"><div class="pg-t2">Uso esta semana <small>(minutos, de lunes a domingo)</small></div><div class="pg-ev">${days.map(d=>`<div><span>${d.m||''}</span><i style="height:${Math.round(d.m/mx*44)+3}px"></i><span>${d.l}</span></div>`).join('')}</div></div>`:''}`}
+<h3>Seguimiento</h3><div class="pg-dx"><button class="pg-t" onclick="notas()"><span class="ib">${ic('edit',20)}</span><b>Notas del tutor</b><small>${nn?nn+(nn==1?' nota':' notas'):'Anotar observaciones'}</small></button><button class="pg-t" onclick="informe()"><span class="ib">${ic('file',20)}</span><b>Informe imprimible</b><small>Resumen en una página</small></button></div><h3>Actividad</h3><div class="pg-g" style="margin-top:0">${cd('clock',tm(p,0),'Hoy')}${cd('cal',days.reduce((a,d)=>a+d.m,0)+' min','Esta semana')}${cd('zap',st+(st==1?' día':' días'),'Racha')}${cd('star',p.st,'Estrellas')}${cd('award',dom,'Letras y sílabas dominadas')}${cd('book',rd,'Libros leídos')}</div>${accCard(p)}${hfa?`<div class="pg-card"><div class="pg-t2">Palabras frecuentes <small>(${hfm} de ${hfa} dominadas)</small></div><div class="bar"><i style="width:${Math.round(hfm/hfa*100)}%"></i></div></div>`:''}${days.some(d=>d.m>0)?`<div class="pg-card"><div class="pg-t2">Uso esta semana <small>(minutos, de lunes a domingo)</small></div><div class="pg-ev">${days.map(d=>`<div><span>${d.m||''}</span><i style="height:${Math.round(d.m/mx*44)+3}px"></i><span>${d.l}</span></div>`).join('')}</div></div>`:''}`}
 function pracW(k){AD=2;let n=0;const all=sylsTo(pr().lv),nx=()=>{if(n++>=4){panel(0);return}ORDER.includes(k)?itemChoose(pr().lv,nx,k):itemSylChoose([k],all,nx)};nx()}
 /* Versión, instrucciones habladas, palabras frecuentes, notas, aula e informe */
-const VER='1.1 · 16 oct 2026';
+const VER='1.4 · 16 oct 2026';
+function acc1(ok){const p=pr();if(!p)return;const D=(p.d=p.d||{}),k=key(),r=D[k]=D[k]||{t:0,s:0};r.a=(r.a||0)+1;if(ok)r.o=(r.o||0)+1}
+function accDays(p,n){return[...Array(n)].map((_,i)=>{const x=new Date();x.setDate(x.getDate()-(n-1-i));const r=(p.d||{})[key(x)]||{},a=r.a||0,o=r.o||0;return{d:x.getDate(),a,o,p:a>=5?Math.round(o/a*100):null}})}
+function accSum(D){const w=arr=>{const a=arr.reduce((s,d)=>s+d.a,0),o=arr.reduce((s,d)=>s+d.o,0);return a>=10?Math.round(o/a*100):null};return{cur:w(D.slice(7)),prev:w(D.slice(0,7))}}
+function accBars(D,cls,h){return D.map(d=>`<div><span>${d.p===null?'':d.p}</span><i style="height:${d.p===null?3:Math.max(3,Math.round(d.p/100*h))+3}px${d.p===null?';opacity:.25':''}"></i><span>${d.d}</span></div>`).join('')}
+function accCard(p){const D=accDays(p,14);if(!D.some(d=>d.p!==null))return'';const{cur,prev}=accSum(D);
+ return `<div class="pg-card"><div class="pg-t2">Aciertos a la primera <small>(últimos 14 días)</small></div>${cur!==null?`<div class="pg-ac"><b>${cur} %</b><small>últimos 7 días${prev!==null?' · 7 días anteriores: '+prev+' %':''}</small></div>`:''}<div class="pg-ev p14">${accBars(D,'',44)}</div><p class="pg-nt">Porcentaje de intentos acertados a la primera cada día; solo se muestran los días con 5 intentos o más.</p></div>`}
+function accRp(p){const D=accDays(p,14);if(!D.some(d=>d.p!==null))return'';const{cur,prev}=accSum(D);
+ return `<section><h3>Aciertos a la primera</h3><div class="rp-ev p14">${accBars(D,'',46)}</div><p class="rp-mu">${cur!==null?'Últimos 7 días: '+cur+' %'+(prev!==null?' · 7 días anteriores: '+prev+' %':'')+'. ':''}Porcentaje de intentos acertados a la primera cada día (días con 5 intentos o más).</p></section>`}
+function setRm(){pr().rm=document.getElementById('rm').value;save();fb('Guardado','ok')}
+const bkAge=()=>{try{const t=+localStorage.getItem('arbk');return t?Math.floor((Date.now()-t)/864e5):null}catch(e){return null}};
+const bkDue=()=>{const a=bkAge();return a===null?P.ps.some(x=>x.st>0||x.lv>0):a>=14};
+const bkTxt=()=>{const a=bkAge();return a===null?'Aún no hay copias guardadas desde este móvil.':'Última copia: '+(a==0?'hoy':'hace '+a+(a==1?' día':' días'))};
+function bkBanner(){if(!bkDue())return'';const a=bkAge();return `<div class="pg-bk"><span class="ib">${ic('download',20)}</span><div style="flex:1;min-width:0"><b>${a===null?'Aún no hay copia de seguridad':'Hace '+a+' días sin copia de seguridad'}</b><small>El progreso se guarda solo en este móvil.</small></div><button class="btn sm" onclick="bkNow()">Guardar</button></div>`}
+function bkNow(){expo();panel(0)}
+function wrec(w,ok){const p=pr();if(!p)return;const E=p.er=p.er||{},k='w:'+w,r=E[k]||{a:0,e:0};r.a++;if(!ok)r.e++;E[k]=r;acc1(ok);save()}
 async function chkVer(){fb('Comprobando…');try{const r=await fetch(location.pathname,{cache:'no-store'}),t=await r.text(),m=t.match(/const VER='([^']+)'/);if(m&&m[1]!==VER)fb('Hay una versión nueva ('+m[1]+'). Pulse «Actualizar ahora».');else fb('Tiene la última versión.','ok')}catch(e){fb('No se pudo comprobar. ¿Hay conexión a internet?','no')}}
 async function updNow(){try{for(const k of await caches.keys())await caches.delete(k);for(const g of await navigator.serviceWorker.getRegistrations())await g.unregister()}catch(e){}location.reload()}
 const gIn=()=>{try{return localStorage.getItem('arm')||'s'}catch(e){return 's'}};
@@ -570,11 +705,11 @@ function addNota(){const t=document.getElementById('ntx').value.trim();if(!t)ret
 function delNota(i){(pr().nt||[]).splice(i,1);save();notas()}
 function wkDays(p){return[...Array(7)].map((_,i)=>{const x=new Date();x.setDate(x.getDate()-((x.getDay()+6)%7)+i);return{l:'LMXJVSD'[i],m:Math.round((((p.d||{})[key(x)]||{}).t||0)/60)}})}
 function aula(){AD=1;
- draw(BK+`<div class="stage" style="text-align:left"><h2 style="margin:0 0 6px">Vista de aula</h2><p><small>${P.ps.length} ${P.ps.length==1?'alumno':'alumnos'}. Toque un nombre para ver su progreso.</small></p><div class="au h"><span>Alumno</span><span>Nivel</span><span>Racha</span><span>Semana</span></div>${P.ps.map((q,i)=>{const w=Object.entries(q.s||{}).filter(([k,v])=>v.b<=1).slice(0,6).map(x=>x[0]),v=(q.vl||[]).slice(-1)[0],sk=streak(q);return `<button class="au" onclick="selT(${i})"><b>${esc(q.n)}</b><span>${LV[q.lv]?esc(LV[q.lv].g):''} <small>${q.lv+1}/${LV.length}</small></span><span>${sk} ${sk==1?'día':'días'}</span><span>${wkDays(q).reduce((a,d)=>a+d.m,0)} min</span><div class="aw">${w.length?'Le cuesta: '+w.map(esc).join(' · '):'Sin dificultades registradas'}${v?' · '+cwpm(v)+' palabras/min':''}</div></button>`}).join('')}</div>`)}
+ draw(BK+`<div class="stage" style="text-align:left"><h2 style="margin:0 0 6px">Vista de aula</h2><p><small>${P.ps.length} ${P.ps.length==1?'alumno':'alumnos'}. Toque un nombre para ver su progreso.</small></p><div class="au h"><span>Alumno</span><span>Nivel</span><span>Racha</span><span>Semana</span></div>${P.ps.map((q,i)=>{const w=Object.entries(q.s||{}).filter(([k,v])=>v.b<=1).sort((a,b)=>(((q.er||{})[b[0]]||{}).e||0)-(((q.er||{})[a[0]]||{}).e||0)).slice(0,6).map(x=>x[0]),v=(q.vl||[]).slice(-1)[0],sk=streak(q);return `<button class="au" onclick="selT(${i})"><b>${esc(q.n)}</b><span>${LV[q.lv]?esc(LV[q.lv].g):''} <small>${q.lv+1}/${LV.length}</small></span><span>${sk} ${sk==1?'día':'días'}</span><span>${wkDays(q).reduce((a,d)=>a+d.m,0)} min</span><div class="aw">${w.length?'Le cuesta: '+w.map(esc).join(' · '):'Sin dificultades registradas'}${v?' · '+cwpm(v)+' palabras/min':''}</div></button>`}).join('')}</div>`)}
 function selT(i){P.c=i;save();hdr();panel(0)}
 const LOGO='<svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#14B8A6"/><path d="M20 14v30h24" fill="none" stroke="#1E293B" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="20" r="6" fill="#F59E0B"/></svg>';
 function informe(){AD=1;const p=pr(),dt=new Date().toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'}),
- E=Object.entries(p.s||{}).sort((a,b)=>a[1].b-b[1].b||a[1].d-b[1].d),W=E.filter(([k,v])=>v.b<=1).slice(0,12).map(x=>x[0]),dom=E.filter(([k,v])=>v.b>=3).length,
+ E=Object.entries(p.s||{}).sort((a,b)=>a[1].b-b[1].b||a[1].d-b[1].d),W=E.filter(([k,v])=>v.b<=1).sort((a,b)=>(((p.er||{})[b[0]]||{}).e||0)-(((p.er||{})[a[0]]||{}).e||0)).slice(0,12).map(x=>x[0]),dom=E.filter(([k,v])=>v.b>=3).length,
  rd=Object.keys(p.rd||{}).length,st=streak(p),days=wkDays(p),mx=Math.max(1,...days.map(d=>d.m)),wm=days.reduce((a,d)=>a+d.m,0),
  vv=(p.vl||[]).slice(-10).map(cwpm),ev=(p.ev||[]).slice(-1)[0],nts=(p.nt||[]).slice(-4).reverse(),hfa=hfAv(p).length,hfm=hfOk(p),pc=Math.round(p.lv/LV.length*100),
  kp=(i,v,l)=>`<div class="rp-k"><span>${ic(i,16)}</span><b>${v}</b><small>${l}</small></div>`,
@@ -587,13 +722,13 @@ function informe(){AD=1;const p=pr(),dt=new Date().toLocaleDateString('es-ES',{d
 <div class="rp-bar"><i style="width:${Math.max(pc,3)}%"></i></div><p class="rp-mu">${p.lv} ${p.lv==1?'nivel superado':'niveles superados'} de ${LV.length}</p>
 <div class="rp-ks">${kp('zap',st+(st==1?' día':' días'),'Racha')}${kp('clock',wm+' min','Esta semana')}${kp('star',p.st,'Estrellas')}${kp('award',dom,'Letras y sílabas dominadas')}${kp('book',rd,'Textos leídos')}${hfa?kp('check',hfm+' / '+hfa,'Palabras frecuentes'):kp('refresh',dueList().length,'Repasos pendientes')}</div>
 <div class="rp-2"><section><h3>Uso esta semana</h3><div class="rp-ev">${days.map(d=>`<div><span>${d.m||''}</span><i style="height:${Math.round(d.m/mx*46)+3}px"></i><span>${d.l}</span></div>`).join('')}</div><p class="rp-mu">Minutos de uso, de lunes a domingo.</p></section><section><h3>Velocidad lectora</h3>${spark()}</section></div>
-<section><h3>Le cuesta (para reforzar)</h3>${W.length?`<div class="rp-ch">${W.map(k=>`<span>${esc(k)}</span>`).join('')}</div>`:'<p class="rp-mu">Nada que reforzar por ahora.</p>'}</section>
+${accRp(p)}<section><h3>Le cuesta (para reforzar)</h3>${W.length?`<div class="rp-ch">${W.map(k=>{const e=((p.er||{})[k]||{}).e;return `<span>${esc(k)}${e?' · '+e+(e==1?' fallo':' fallos'):''}</span>`}).join('')}</div>`:'<p class="rp-mu">Nada que reforzar por ahora.</p>'}</section>
 ${ev?`<section><h3>Última evaluación de nivel</h3><p style="margin:0">${dm(ev.d)}: nivel estimado <b>${esc(LV[ev.lv]?LV[ev.lv].g:'')}</b> <span class="rp-mu">(${esc(ev.h)})</span></p></section>`:''}
 ${nts.length?`<section><h3>Notas del tutor</h3>${nts.map(n=>`<div class="rp-nt"><small>${dm(n.d)}</small><p>${esc(n.x)}</p></div>`).join('')}</section>`:''}
 <section class="rp-home"><h3>Para practicar en casa</h3><ul>${W.length?`<li>Repasar cada día unos 5 minutos: <b>${W.slice(0,5).map(esc).join(', ')}</b>.</li>`:''}<li>Leer en voz alta un texto corto y repetirlo varias veces.</li><li>Comentar lo leído: ¿qué ha pasado?, ¿qué ha entendido?</li><li>Mejor sesiones cortas casi todos los días que una larga.</li></ul></section>
 <p class="rp-foot">Informe generado por Lectori. Resume la actividad registrada en la aplicación; son señales para observar y reforzar, no un diagnóstico.</p></article>`)}
 function sure(b,f){if(b.dataset.s)return f();b.dataset.s=1;b.textContent='¿Seguro? Pulsa otra vez'}
-function resetP(){const p=pr();p.lv=0;p.st=0;p.s={};save();home()}
+function resetP(){const p=pr();p.lv=0;p.st=0;p.s={};p.er={};save();home()}
 function delP(){P.ps.splice(P.c,1);P.c=-1;save();profiles()}
 function map(){const p=pr();draw(BACK+`<p class="fb">Elige un nivel</p><div class="grid">${LV.map((l,i)=>`<button class="k${i==p.lv?' cur':''}" ${i>p.lv?'disabled aria-label="bloqueada"':''} onclick="level(${i})">${i>p.lv?'🔒':l.g}</button>`).join('')}</div><div class="row" style="margin-top:18px"><button class="btn" onclick="practice()">🎮 Practicar</button></div>`)}
 
@@ -632,13 +767,16 @@ function itemText(t,d,sk){if(chk())return;const t0=Date.now();let rm='',ms=false
   const my=draw(BACK+`<div class="stage"><p class="fb" style="margin:0">${t.q}</p><div class="row"><button class="btn" id="h">🔊 Escuchar pregunta</button><button class="btn alt" id="bk">📖 Ver texto</button></div><div class="grid" style="grid-template-columns:repeat(${o.length},1fr);margin-top:14px">${o.map((e,k)=>`<button class="k" id="o${k}" style="font-size:3rem">${e}</button>`).join('')}</div><div class="fb" id="fb"></div></div>`);
   const hear=()=>say('q:'+String(t.i).padStart(3,'0'),t.q,.85);$('#h').onclick=hear;hear();$('#bk').onclick=()=>itemText(t,d,1);
   o.forEach((e,k)=>$('#o'+k).onclick=async()=>{if(e==t.o[0]){star();fb('¡Muy bien!'+(rm?' '+rm:''),'ok');await wait(rm?2200:800);if(my===T)d(!ms)}else{const b=$('#o'+k);b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),300);ms=true;fb('Vuelve a leer el texto','no')}})}}
-function itemRead(w,pic,d){if(chk())return;const U=units(w);let t=0;
- const my=draw(BACK+`<div class="stage"><div class="word">${U.map((c,i)=>`<span class="l${sil(U,i)?' mu':''}" id="l${i}">${c}</span>`).join('')}</div><div class="row"><button class="btn alt" id="hear">🔊 Escuchar sonidos</button><button class="btn rec" id="mic">🎤 Leo yo</button></div><div class="fb" id="fb">Escucha y luego di la palabra.</div><div class="row" id="nx"></div></div>`);
- const nxt=ok=>{$('#nx').innerHTML='<button class="btn" id="n">Siguiente ➜</button>';$('#n').onclick=()=>d(ok)};
+function itemRead(w,pic,d){if(chk())return;const U=units(w);let t=0;const TM=pr().rm=='t'||!(window.SpeechRecognition||window.webkitSpeechRecognition);
+ const my=draw(BACK+`<div class="stage"><div class="word">${U.map((c,i)=>`<span class="l${sil(U,i)?' mu':''}" id="l${i}">${c}</span>`).join('')}</div><div class="row"><button class="btn alt" id="hear">🔊 Escuchar sonidos</button>${TM?'<button class="btn" id="ok2">✔ Lo leyó bien</button><button class="btn alt" id="ko2">Necesita ayuda</button>':'<button class="btn rec" id="mic">🎤 Leo yo</button>'}</div><div class="fb" id="fb">Escucha y luego di la palabra.</div><div class="row" id="nx"></div></div>`);
+ const nxt=ok=>{wrec(w,ok);$('#nx').innerHTML='<button class="btn" id="n">Siguiente ➜</button>';$('#n').onclick=()=>d(ok)};
  const blend=async()=>{for(let i=0;i<U.length;i++){const e=$('#l'+i);if(my!==T||!e)return;if(sil(U,i))continue;const e2=sil(U,i+1)?$('#l'+(i+1)):null;e.classList.add('on');if(e2)e2.classList.add('on');await snd(U[i]);await wait(120);e.classList.remove('on');if(e2)e2.classList.remove('on')}if(my===T)await wd(w)};
  $('#hear').onclick=blend;inst('r','Lee la palabra en voz alta. Si quieres, escucha primero los sonidos.');
  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
- $('#mic').onclick=()=>{
+ if(TM){fb('Lee en voz alta. El tutor valida si lo ha leído bien.');
+  $('#ok2').onclick=async()=>{star();fb('¡Muy bien! '+w,'ok');await wd(w);if(my===T)nxt(t<2)};
+  $('#ko2').onclick=async()=>{t++;if(t<2){fb('Vamos otra vez. Escucha los sonidos 💪','no');await blend();fb('Ahora tú.')}else{fb('Vamos juntos: '+w,'no');await blend();if(my===T)nxt(false)}}}
+ else $('#mic').onclick=()=>{
   if(!SR){fb('Este navegador no escucha. El tutor decide:');$('#nx').innerHTML='<button class="btn" id="y">Lo dijo bien ✔</button><button class="btn alt" id="h2">Necesita ayuda</button>';$('#y').onclick=()=>{star();fb('¡Muy bien!','ok');nxt(true)};$('#h2').onclick=()=>{blend();nxt(false)};return}
   const r=new SR();r.lang='es-ES';r.maxAlternatives=5;try{speechSynthesis.cancel()}catch(e){}fb('Te escucho… 👂');
   r.onresult=async e=>{if(my!==T)return;const a=[...e.results[0]].flatMap(x=>norm(x.transcript).split(' '));
