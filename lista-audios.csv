@@ -1,0 +1,947 @@
+﻿tipo,archivo,texto
+instruccion,audio/instrucciones/c.mp3,Toca la letra que suena.
+instruccion,audio/instrucciones/sc.mp3,Toca la sílaba que suena.
+instruccion,audio/instrucciones/si.mp3,Toca cada sílaba y escucha cómo se juntan los sonidos.
+instruccion,audio/instrucciones/r.mp3,"Lee la palabra en voz alta. Si quieres, escucha primero los sonidos."
+instruccion,audio/instrucciones/b.mp3,Escucha la palabra y ordena las letras para formarla.
+instruccion,audio/instrucciones/t.mp3,"Lee el texto. Cuando termines, pulsa Ya lo leí."
+instruccion,audio/instrucciones/w.mp3,"Repasa la letra con el dedo, empezando por el punto amarillo."
+instruccion,audio/instrucciones/sr.mp3,Lee la sílaba en voz alta. Toca la sílaba si quieres oír los sonidos.
+instruccion,audio/instrucciones/sw.mp3,Escucha la palabra y ordena las sílabas para formarla.
+instruccion,audio/instrucciones/sf.mp3,Toca la sílaba con la que empieza la palabra.
+palabra,audio/palabras/ala.mp3,ala
+palabra,audio/palabras/ola.mp3,ola
+palabra,audio/palabras/aula.mp3,aula
+palabra,audio/palabras/mama.mp3,mama
+palabra,audio/palabras/mula.mp3,mula
+palabra,audio/palabras/lima.mp3,lima
+palabra,audio/palabras/malo.mp3,malo
+palabra,audio/palabras/sol.mp3,sol
+palabra,audio/palabras/mesa.mp3,mesa
+palabra,audio/palabras/sala.mp3,sala
+palabra,audio/palabras/isla.mp3,isla
+palabra,audio/palabras/luna.mp3,luna
+palabra,audio/palabras/mano.mp3,mano
+palabra,audio/palabras/mono.mp3,mono
+palabra,audio/palabras/nena.mp3,nena
+palabra,audio/palabras/hola.mp3,hola
+palabra,audio/palabras/hilo.mp3,hilo
+palabra,audio/palabras/humo.mp3,humo
+palabra,audio/palabras/hueso.mp3,hueso
+palabra,audio/palabras/dado.mp3,dado
+palabra,audio/palabras/dedo.mp3,dedo
+palabra,audio/palabras/nido.mp3,nido
+palabra,audio/palabras/mundo.mp3,mundo
+palabra,audio/palabras/dime.mp3,dime
+palabra,audio/palabras/nada.mp3,nada
+palabra,audio/palabras/lodo.mp3,lodo
+palabra,audio/palabras/mide.mp3,mide
+palabra,audio/palabras/fila.mp3,fila
+palabra,audio/palabras/fino.mp3,fino
+palabra,audio/palabras/fideo.mp3,fideo
+palabra,audio/palabras/fama.mp3,fama
+palabra,audio/palabras/sofa.mp3,sofá
+palabra,audio/palabras/fuma.mp3,fuma
+palabra,audio/palabras/foso.mp3,foso
+palabra,audio/palabras/fiel.mp3,fiel
+palabra,audio/palabras/sopa.mp3,sopa
+palabra,audio/palabras/mapa.mp3,mapa
+palabra,audio/palabras/pelo.mp3,pelo
+palabra,audio/palabras/pulpo.mp3,pulpo
+palabra,audio/palabras/pie.mp3,pie
+palabra,audio/palabras/pino.mp3,pino
+palabra,audio/palabras/piso.mp3,piso
+palabra,audio/palabras/pasa.mp3,pasa
+palabra,audio/palabras/pato.mp3,pato
+palabra,audio/palabras/lata.mp3,lata
+palabra,audio/palabras/tomate.mp3,tomate
+palabra,audio/palabras/tinta.mp3,tinta
+palabra,audio/palabras/tela.mp3,tela
+palabra,audio/palabras/tapa.mp3,tapa
+palabra,audio/palabras/tema.mp3,tema
+palabra,audio/palabras/tuna.mp3,tuna
+palabra,audio/palabras/pera.mp3,pera
+palabra,audio/palabras/rana.mp3,rana
+palabra,audio/palabras/mira.mp3,mira
+palabra,audio/palabras/pared.mp3,pared
+palabra,audio/palabras/rosa.mp3,rosa
+palabra,audio/palabras/ropa.mp3,ropa
+palabra,audio/palabras/remo.mp3,remo
+palabra,audio/palabras/oro.mp3,oro
+palabra,audio/palabras/bota.mp3,bota
+palabra,audio/palabras/libro.mp3,libro
+palabra,audio/palabras/nube.mp3,nube
+palabra,audio/palabras/bolsa.mp3,bolsa
+palabra,audio/palabras/bola.mp3,bola
+palabra,audio/palabras/beso.mp3,beso
+palabra,audio/palabras/bufanda.mp3,bufanda
+palabra,audio/palabras/barba.mp3,barba
+palabra,audio/palabras/vaso.mp3,vaso
+palabra,audio/palabras/vela.mp3,vela
+palabra,audio/palabras/uva.mp3,uva
+palabra,audio/palabras/nave.mp3,nave
+palabra,audio/palabras/ave.mp3,ave
+palabra,audio/palabras/vena.mp3,vena
+palabra,audio/palabras/volar.mp3,volar
+palabra,audio/palabras/nevar.mp3,nevar
+palabra,audio/palabras/ninyo.mp3,niño
+palabra,audio/palabras/pinya.mp3,piña
+palabra,audio/palabras/banyo.mp3,baño
+palabra,audio/palabras/unya.mp3,uña
+palabra,audio/palabras/ninya.mp3,niña
+palabra,audio/palabras/lenya.mp3,leña
+palabra,audio/palabras/anyo.mp3,año
+palabra,audio/palabras/monyo.mp3,moño
+palabra,audio/palabras/yoyo.mp3,yoyo
+palabra,audio/palabras/yema.mp3,yema
+palabra,audio/palabras/yate.mp3,yate
+palabra,audio/palabras/rey.mp3,rey
+palabra,audio/palabras/rayo.mp3,rayo
+palabra,audio/palabras/mayo.mp3,mayo
+palabra,audio/palabras/yeso.mp3,yeso
+palabra,audio/palabras/ayuda.mp3,ayuda
+palabra,audio/palabras/kilo.mp3,kilo
+palabra,audio/palabras/koala.mp3,koala
+palabra,audio/palabras/kayak.mp3,kayak
+palabra,audio/palabras/karate.mp3,karate
+palabra,audio/palabras/casa.mp3,casa
+palabra,audio/palabras/cama.mp3,cama
+palabra,audio/palabras/cola.mp3,cola
+palabra,audio/palabras/cuna.mp3,cuna
+palabra,audio/palabras/vaca.mp3,vaca
+palabra,audio/palabras/copa.mp3,copa
+palabra,audio/palabras/mico.mp3,mico
+palabra,audio/palabras/taco.mp3,taco
+palabra,audio/palabras/zapato.mp3,zapato
+palabra,audio/palabras/zumo.mp3,zumo
+palabra,audio/palabras/taza.mp3,taza
+palabra,audio/palabras/luz.mp3,luz
+palabra,audio/palabras/zona.mp3,zona
+palabra,audio/palabras/cazo.mp3,cazo
+palabra,audio/palabras/cena.mp3,cena
+palabra,audio/palabras/lazo.mp3,lazo
+palabra,audio/palabras/queso.mp3,queso
+palabra,audio/palabras/paquete.mp3,paquete
+palabra,audio/palabras/quiero.mp3,quiero
+palabra,audio/palabras/quema.mp3,quema
+palabra,audio/palabras/quita.mp3,quita
+palabra,audio/palabras/poquito.mp3,poquito
+palabra,audio/palabras/tequila.mp3,tequila
+palabra,audio/palabras/gato.mp3,gato
+palabra,audio/palabras/goma.mp3,goma
+palabra,audio/palabras/lago.mp3,lago
+palabra,audio/palabras/gusano.mp3,gusano
+palabra,audio/palabras/ojo.mp3,ojo
+palabra,audio/palabras/caja.mp3,caja
+palabra,audio/palabras/jirafa.mp3,jirafa
+palabra,audio/palabras/tijeras.mp3,tijeras
+palabra,audio/palabras/kiwi.mp3,kiwi
+palabra,audio/palabras/wifi.mp3,wifi
+palabra,audio/palabras/web.mp3,web
+palabra,audio/palabras/taxi.mp3,taxi
+palabra,audio/palabras/texto.mp3,texto
+palabra,audio/palabras/boxeo.mp3,boxeo
+palabra,audio/palabras/lluvia.mp3,lluvia
+palabra,audio/palabras/llave.mp3,llave
+palabra,audio/palabras/silla.mp3,silla
+palabra,audio/palabras/pollo.mp3,pollo
+palabra,audio/palabras/leche.mp3,leche
+palabra,audio/palabras/coche.mp3,coche
+palabra,audio/palabras/noche.mp3,noche
+palabra,audio/palabras/mochila.mp3,mochila
+palabra,audio/palabras/sal.mp3,sal
+palabra,audio/palabras/papel.mp3,papel
+palabra,audio/palabras/mar.mp3,mar
+palabra,audio/palabras/color.mp3,color
+palabra,audio/palabras/pasta.mp3,pasta
+palabra,audio/palabras/mosca.mp3,mosca
+palabra,audio/palabras/pan.mp3,pan
+palabra,audio/palabras/campo.mp3,campo
+palabra,audio/palabras/tambor.mp3,tambor
+palabra,audio/palabras/pez.mp3,pez
+palabra,audio/palabras/azul.mp3,azul
+palabra,audio/palabras/blusa.mp3,blusa
+palabra,audio/palabras/tabla.mp3,tabla
+palabra,audio/palabras/brazo.mp3,brazo
+palabra,audio/palabras/bruja.mp3,bruja
+palabra,audio/palabras/clase.mp3,clase
+palabra,audio/palabras/clavo.mp3,clavo
+palabra,audio/palabras/crema.mp3,crema
+palabra,audio/palabras/cruz.mp3,cruz
+palabra,audio/palabras/flor.mp3,flor
+palabra,audio/palabras/flaco.mp3,flaco
+palabra,audio/palabras/fruta.mp3,fruta
+palabra,audio/palabras/fresa.mp3,fresa
+palabra,audio/palabras/globo.mp3,globo
+palabra,audio/palabras/regla.mp3,regla
+palabra,audio/palabras/tigre.mp3,tigre
+palabra,audio/palabras/gris.mp3,gris
+palabra,audio/palabras/cuadro.mp3,cuadro
+palabra,audio/palabras/madre.mp3,madre
+palabra,audio/palabras/tren.mp3,tren
+palabra,audio/palabras/trigo.mp3,trigo
+palabra,audio/palabras/plato.mp3,plato
+palabra,audio/palabras/pluma.mp3,pluma
+palabra,audio/palabras/playa.mp3,playa
+palabra,audio/palabras/premio.mp3,premio
+palabra,audio/palabras/perro.mp3,perro
+palabra,audio/palabras/carro.mp3,carro
+palabra,audio/palabras/torre.mp3,torre
+palabra,audio/palabras/zorro.mp3,zorro
+palabra,audio/palabras/piano.mp3,piano
+palabra,audio/palabras/cielo.mp3,cielo
+palabra,audio/palabras/nieve.mp3,nieve
+palabra,audio/palabras/diente.mp3,diente
+palabra,audio/palabras/agua.mp3,agua
+palabra,audio/palabras/huevo.mp3,huevo
+palabra,audio/palabras/fuego.mp3,fuego
+palabra,audio/palabras/puerta.mp3,puerta
+palabra,audio/palabras/aire.mp3,aire
+palabra,audio/palabras/reina.mp3,reina
+palabra,audio/palabras/boina.mp3,boina
+palabra,audio/palabras/jaula.mp3,jaula
+palabra,audio/palabras/pinguuino.mp3,pingüino
+palabra,audio/palabras/bilinguue.mp3,bilingüe
+palabra,audio/palabras/ciguuenya.mp3,cigüeña
+palabra,audio/palabras/actor.mp3,actor
+palabra,audio/palabras/doctor.mp3,doctor
+palabra,audio/palabras/pupitre.mp3,pupitre
+palabra,audio/palabras/examen.mp3,examen
+palabra,audio/palabras/rio.mp3,río
+palabra,audio/palabras/tio.mp3,tío
+palabra,audio/palabras/dia.mp3,día
+palabra,audio/palabras/maiz.mp3,maíz
+palabra,audio/palabras/pais.mp3,país
+palabra,audio/palabras/baul.mp3,baúl
+palabra,audio/palabras/leer.mp3,leer
+palabra,audio/palabras/poeta.mp3,poeta
+palabra,audio/palabras/el.mp3,el
+palabra,audio/palabras/la.mp3,la
+palabra,audio/palabras/lo.mp3,lo
+palabra,audio/palabras/le.mp3,le
+palabra,audio/palabras/los.mp3,los
+palabra,audio/palabras/las.mp3,las
+palabra,audio/palabras/un.mp3,un
+palabra,audio/palabras/una.mp3,una
+palabra,audio/palabras/mi.mp3,mi
+palabra,audio/palabras/mis.mp3,mis
+palabra,audio/palabras/me.mp3,me
+palabra,audio/palabras/no.mp3,no
+palabra,audio/palabras/nos.mp3,nos
+palabra,audio/palabras/se.mp3,se
+palabra,audio/palabras/si.mp3,si
+palabra,audio/palabras/su.mp3,su
+palabra,audio/palabras/sus.mp3,sus
+palabra,audio/palabras/sin.mp3,sin
+palabra,audio/palabras/en.mp3,en
+palabra,audio/palabras/es.mp3,es
+palabra,audio/palabras/son.mp3,son
+palabra,audio/palabras/de.mp3,de
+palabra,audio/palabras/del.mp3,del
+palabra,audio/palabras/dos.mp3,dos
+palabra,audio/palabras/por.mp3,por
+palabra,audio/palabras/para.mp3,para
+palabra,audio/palabras/pero.mp3,pero
+palabra,audio/palabras/te.mp3,te
+palabra,audio/palabras/tu.mp3,tu
+palabra,audio/palabras/tan.mp3,tan
+palabra,audio/palabras/tres.mp3,tres
+palabra,audio/palabras/y.mp3,y
+palabra,audio/palabras/yo.mp3,yo
+palabra,audio/palabras/ya.mp3,ya
+palabra,audio/palabras/muy.mp3,muy
+palabra,audio/palabras/que.mp3,que
+palabra,audio/palabras/con.mp3,con
+palabra,audio/palabras/como.mp3,como
+palabra,audio/palabras/esto.mp3,esto
+palabra,audio/palabras/este.mp3,este
+palabra,audio/palabras/esta.mp3,esta
+palabra,audio/palabras/eso.mp3,eso
+palabra,audio/palabras/ese.mp3,ese
+palabra,audio/palabras/hay.mp3,hay
+palabra,audio/palabras/fue.mp3,fue
+palabra,audio/palabras/ser.mp3,ser
+palabra,audio/palabras/mas.mp3,más
+silaba,audio/silabas/la.mp3,la
+silaba,audio/silabas/le.mp3,le
+silaba,audio/silabas/li.mp3,li
+silaba,audio/silabas/lo.mp3,lo
+silaba,audio/silabas/lu.mp3,lu
+silaba,audio/silabas/ma.mp3,ma
+silaba,audio/silabas/me.mp3,me
+silaba,audio/silabas/mi.mp3,mi
+silaba,audio/silabas/mo.mp3,mo
+silaba,audio/silabas/mu.mp3,mu
+silaba,audio/silabas/sa.mp3,sa
+silaba,audio/silabas/se.mp3,se
+silaba,audio/silabas/si.mp3,si
+silaba,audio/silabas/so.mp3,so
+silaba,audio/silabas/su.mp3,su
+silaba,audio/silabas/na.mp3,na
+silaba,audio/silabas/ne.mp3,ne
+silaba,audio/silabas/ni.mp3,ni
+silaba,audio/silabas/no.mp3,no
+silaba,audio/silabas/nu.mp3,nu
+silaba,audio/silabas/ha.mp3,ha
+silaba,audio/silabas/he.mp3,he
+silaba,audio/silabas/hi.mp3,hi
+silaba,audio/silabas/ho.mp3,ho
+silaba,audio/silabas/hu.mp3,hu
+silaba,audio/silabas/da.mp3,da
+silaba,audio/silabas/de.mp3,de
+silaba,audio/silabas/di.mp3,di
+silaba,audio/silabas/do.mp3,do
+silaba,audio/silabas/du.mp3,du
+silaba,audio/silabas/fa.mp3,fa
+silaba,audio/silabas/fe.mp3,fe
+silaba,audio/silabas/fi.mp3,fi
+silaba,audio/silabas/fo.mp3,fo
+silaba,audio/silabas/fu.mp3,fu
+silaba,audio/silabas/pa.mp3,pa
+silaba,audio/silabas/pe.mp3,pe
+silaba,audio/silabas/pi.mp3,pi
+silaba,audio/silabas/po.mp3,po
+silaba,audio/silabas/pu.mp3,pu
+silaba,audio/silabas/ta.mp3,ta
+silaba,audio/silabas/te.mp3,te
+silaba,audio/silabas/ti.mp3,ti
+silaba,audio/silabas/to.mp3,to
+silaba,audio/silabas/tu.mp3,tu
+silaba,audio/silabas/ra.mp3,ra
+silaba,audio/silabas/re.mp3,re
+silaba,audio/silabas/ri.mp3,ri
+silaba,audio/silabas/ro.mp3,ro
+silaba,audio/silabas/ru.mp3,ru
+silaba,audio/silabas/ba.mp3,ba
+silaba,audio/silabas/be.mp3,be
+silaba,audio/silabas/bi.mp3,bi
+silaba,audio/silabas/bo.mp3,bo
+silaba,audio/silabas/bu.mp3,bu
+silaba,audio/silabas/va.mp3,va
+silaba,audio/silabas/ve.mp3,ve
+silaba,audio/silabas/vi.mp3,vi
+silaba,audio/silabas/vo.mp3,vo
+silaba,audio/silabas/vu.mp3,vu
+silaba,audio/silabas/nya.mp3,ña
+silaba,audio/silabas/nye.mp3,ñe
+silaba,audio/silabas/nyi.mp3,ñi
+silaba,audio/silabas/nyo.mp3,ño
+silaba,audio/silabas/nyu.mp3,ñu
+silaba,audio/silabas/ya.mp3,ya
+silaba,audio/silabas/ye.mp3,ye
+silaba,audio/silabas/yi.mp3,yi
+silaba,audio/silabas/yo.mp3,yo
+silaba,audio/silabas/yu.mp3,yu
+silaba,audio/silabas/ka.mp3,ka
+silaba,audio/silabas/ke.mp3,ke
+silaba,audio/silabas/ki.mp3,ki
+silaba,audio/silabas/ko.mp3,ko
+silaba,audio/silabas/ku.mp3,ku
+silaba,audio/silabas/ca.mp3,ca
+silaba,audio/silabas/co.mp3,co
+silaba,audio/silabas/cu.mp3,cu
+silaba,audio/silabas/za.mp3,za
+silaba,audio/silabas/ze.mp3,ze
+silaba,audio/silabas/zi.mp3,zi
+silaba,audio/silabas/zo.mp3,zo
+silaba,audio/silabas/zu.mp3,zu
+silaba,audio/silabas/ce.mp3,ce
+silaba,audio/silabas/ci.mp3,ci
+silaba,audio/silabas/que.mp3,que
+silaba,audio/silabas/qui.mp3,qui
+silaba,audio/silabas/ga.mp3,ga
+silaba,audio/silabas/go.mp3,go
+silaba,audio/silabas/gu.mp3,gu
+silaba,audio/silabas/gue.mp3,gue
+silaba,audio/silabas/gui.mp3,gui
+silaba,audio/silabas/ja.mp3,ja
+silaba,audio/silabas/je.mp3,je
+silaba,audio/silabas/ji.mp3,ji
+silaba,audio/silabas/jo.mp3,jo
+silaba,audio/silabas/ju.mp3,ju
+silaba,audio/silabas/ge.mp3,ge
+silaba,audio/silabas/gi.mp3,gi
+silaba,audio/silabas/wa.mp3,wa
+silaba,audio/silabas/we.mp3,we
+silaba,audio/silabas/wi.mp3,wi
+silaba,audio/silabas/lla.mp3,lla
+silaba,audio/silabas/lle.mp3,lle
+silaba,audio/silabas/lli.mp3,lli
+silaba,audio/silabas/llo.mp3,llo
+silaba,audio/silabas/llu.mp3,llu
+silaba,audio/silabas/cha.mp3,cha
+silaba,audio/silabas/che.mp3,che
+silaba,audio/silabas/chi.mp3,chi
+silaba,audio/silabas/cho.mp3,cho
+silaba,audio/silabas/chu.mp3,chu
+silaba,audio/silabas/al.mp3,al
+silaba,audio/silabas/el.mp3,el
+silaba,audio/silabas/il.mp3,il
+silaba,audio/silabas/ol.mp3,ol
+silaba,audio/silabas/ul.mp3,ul
+silaba,audio/silabas/ar.mp3,ar
+silaba,audio/silabas/er.mp3,er
+silaba,audio/silabas/ir.mp3,ir
+silaba,audio/silabas/or.mp3,or
+silaba,audio/silabas/ur.mp3,ur
+silaba,audio/silabas/as.mp3,as
+silaba,audio/silabas/es.mp3,es
+silaba,audio/silabas/is.mp3,is
+silaba,audio/silabas/os.mp3,os
+silaba,audio/silabas/us.mp3,us
+silaba,audio/silabas/an.mp3,an
+silaba,audio/silabas/en.mp3,en
+silaba,audio/silabas/in.mp3,in
+silaba,audio/silabas/on.mp3,on
+silaba,audio/silabas/un.mp3,un
+silaba,audio/silabas/am.mp3,am
+silaba,audio/silabas/em.mp3,em
+silaba,audio/silabas/im.mp3,im
+silaba,audio/silabas/om.mp3,om
+silaba,audio/silabas/um.mp3,um
+silaba,audio/silabas/ad.mp3,ad
+silaba,audio/silabas/ed.mp3,ed
+silaba,audio/silabas/id.mp3,id
+silaba,audio/silabas/od.mp3,od
+silaba,audio/silabas/ud.mp3,ud
+silaba,audio/silabas/az.mp3,az
+silaba,audio/silabas/ez.mp3,ez
+silaba,audio/silabas/iz.mp3,iz
+silaba,audio/silabas/oz.mp3,oz
+silaba,audio/silabas/uz.mp3,uz
+silaba,audio/silabas/bla.mp3,bla
+silaba,audio/silabas/ble.mp3,ble
+silaba,audio/silabas/bli.mp3,bli
+silaba,audio/silabas/blo.mp3,blo
+silaba,audio/silabas/blu.mp3,blu
+silaba,audio/silabas/bra.mp3,bra
+silaba,audio/silabas/bre.mp3,bre
+silaba,audio/silabas/bri.mp3,bri
+silaba,audio/silabas/bro.mp3,bro
+silaba,audio/silabas/bru.mp3,bru
+silaba,audio/silabas/cla.mp3,cla
+silaba,audio/silabas/cle.mp3,cle
+silaba,audio/silabas/cli.mp3,cli
+silaba,audio/silabas/clo.mp3,clo
+silaba,audio/silabas/clu.mp3,clu
+silaba,audio/silabas/cra.mp3,cra
+silaba,audio/silabas/cre.mp3,cre
+silaba,audio/silabas/cri.mp3,cri
+silaba,audio/silabas/cro.mp3,cro
+silaba,audio/silabas/cru.mp3,cru
+silaba,audio/silabas/fla.mp3,fla
+silaba,audio/silabas/fle.mp3,fle
+silaba,audio/silabas/fli.mp3,fli
+silaba,audio/silabas/flo.mp3,flo
+silaba,audio/silabas/flu.mp3,flu
+silaba,audio/silabas/fra.mp3,fra
+silaba,audio/silabas/fre.mp3,fre
+silaba,audio/silabas/fri.mp3,fri
+silaba,audio/silabas/fro.mp3,fro
+silaba,audio/silabas/fru.mp3,fru
+silaba,audio/silabas/gla.mp3,gla
+silaba,audio/silabas/gle.mp3,gle
+silaba,audio/silabas/gli.mp3,gli
+silaba,audio/silabas/glo.mp3,glo
+silaba,audio/silabas/glu.mp3,glu
+silaba,audio/silabas/gra.mp3,gra
+silaba,audio/silabas/gre.mp3,gre
+silaba,audio/silabas/gri.mp3,gri
+silaba,audio/silabas/gro.mp3,gro
+silaba,audio/silabas/gru.mp3,gru
+silaba,audio/silabas/dra.mp3,dra
+silaba,audio/silabas/dre.mp3,dre
+silaba,audio/silabas/dri.mp3,dri
+silaba,audio/silabas/dro.mp3,dro
+silaba,audio/silabas/dru.mp3,dru
+silaba,audio/silabas/tra.mp3,tra
+silaba,audio/silabas/tre.mp3,tre
+silaba,audio/silabas/tri.mp3,tri
+silaba,audio/silabas/tro.mp3,tro
+silaba,audio/silabas/tru.mp3,tru
+silaba,audio/silabas/pla.mp3,pla
+silaba,audio/silabas/ple.mp3,ple
+silaba,audio/silabas/pli.mp3,pli
+silaba,audio/silabas/plo.mp3,plo
+silaba,audio/silabas/plu.mp3,plu
+silaba,audio/silabas/pra.mp3,pra
+silaba,audio/silabas/pre.mp3,pre
+silaba,audio/silabas/pri.mp3,pri
+silaba,audio/silabas/pro.mp3,pro
+silaba,audio/silabas/pru.mp3,pru
+silaba,audio/silabas/rra.mp3,rra
+silaba,audio/silabas/rre.mp3,rre
+silaba,audio/silabas/rri.mp3,rri
+silaba,audio/silabas/rro.mp3,rro
+silaba,audio/silabas/rru.mp3,rru
+silaba,audio/silabas/ia.mp3,ia
+silaba,audio/silabas/ie.mp3,ie
+silaba,audio/silabas/io.mp3,io
+silaba,audio/silabas/iu.mp3,iu
+silaba,audio/silabas/ua.mp3,ua
+silaba,audio/silabas/ue.mp3,ue
+silaba,audio/silabas/uo.mp3,uo
+silaba,audio/silabas/ui.mp3,ui
+silaba,audio/silabas/ai.mp3,ai
+silaba,audio/silabas/ei.mp3,ei
+silaba,audio/silabas/oi.mp3,oi
+silaba,audio/silabas/au.mp3,au
+silaba,audio/silabas/eu.mp3,eu
+silaba,audio/silabas/guue.mp3,güe
+silaba,audio/silabas/guui.mp3,güi
+silaba,audio/silabas/ab.mp3,ab
+silaba,audio/silabas/eb.mp3,eb
+silaba,audio/silabas/ib.mp3,ib
+silaba,audio/silabas/ob.mp3,ob
+silaba,audio/silabas/ub.mp3,ub
+silaba,audio/silabas/ac.mp3,ac
+silaba,audio/silabas/ec.mp3,ec
+silaba,audio/silabas/ic.mp3,ic
+silaba,audio/silabas/oc.mp3,oc
+silaba,audio/silabas/uc.mp3,uc
+silaba,audio/silabas/ap.mp3,ap
+silaba,audio/silabas/ep.mp3,ep
+silaba,audio/silabas/ip.mp3,ip
+silaba,audio/silabas/op.mp3,op
+silaba,audio/silabas/up.mp3,up
+silaba,audio/silabas/at.mp3,at
+silaba,audio/silabas/et.mp3,et
+silaba,audio/silabas/it.mp3,it
+silaba,audio/silabas/ot.mp3,ot
+silaba,audio/silabas/ut.mp3,ut
+silaba,audio/silabas/ex.mp3,ex
+texto,audio/textos/000.mp3,Mamá ama a mi mula.
+pregunta,audio/preguntas/000.mp3,¿Qué ama mamá?
+texto,audio/textos/001.mp3,Mi mamá usa la sal.
+pregunta,audio/preguntas/001.mp3,¿Qué usa mamá?
+texto,audio/textos/002.mp3,Mi mamá sale a la isla.
+pregunta,audio/preguntas/002.mp3,¿A dónde sale mamá?
+texto,audio/textos/003.mp3,Mi mono ama la luna.
+pregunta,audio/preguntas/003.mp3,¿Qué ama el mono?
+texto,audio/textos/004.mp3,Ana ama su mono.
+pregunta,audio/preguntas/004.mp3,¿Qué ama Ana?
+texto,audio/textos/005.mp3,Mamá da un dado a la nena.
+pregunta,audio/preguntas/005.mp3,¿Qué da mamá?
+texto,audio/textos/006.mp3,Papá usa una pala.
+pregunta,audio/preguntas/006.mp3,¿Qué usa papá?
+texto,audio/textos/007.mp3,Mi mamá pone sopa en la mesa.
+pregunta,audio/preguntas/007.mp3,¿Qué pone mamá en la mesa?
+texto,audio/textos/008.mp3,El pato está en la sala.
+pregunta,audio/preguntas/008.mp3,¿Quién está en la sala?
+texto,audio/textos/009.mp3,Mi mamá pone tomate en la sopa.
+pregunta,audio/preguntas/009.mp3,¿Qué pone en la sopa?
+texto,audio/textos/010.mp3,El pato está en la sala. El pato es de papá. El pato no es de mamá.
+pregunta,audio/preguntas/010.mp3,¿De quién es el pato?
+texto,audio/textos/011.mp3,Una rana está en la mesa.
+pregunta,audio/preguntas/011.mp3,¿Quién está en la mesa?
+texto,audio/textos/012.mp3,Rosa tiene una pera. Rosa pone la pera en la mesa. Mamá toma la pera.
+pregunta,audio/preguntas/012.mp3,¿Qué tiene Rosa?
+texto,audio/textos/013.mp3,Mi bebé tiene una bota.
+pregunta,audio/preguntas/013.mp3,¿Qué tiene el bebé?
+texto,audio/textos/014.mp3,Tito tiene un libro. Es un libro de ratas. Tito abre el libro.
+pregunta,audio/preguntas/014.mp3,¿Qué abre Tito?
+texto,audio/textos/015.mp3,Ana ve una uva en la mesa.
+pregunta,audio/preguntas/015.mp3,¿Qué ve Ana?
+texto,audio/textos/016.mp3,El niño pone una piña en la mesa.
+pregunta,audio/preguntas/016.mp3,¿Qué pone el niño?
+texto,audio/textos/017.mp3,Yo uso mi yoyo en la sala.
+pregunta,audio/preguntas/017.mp3,¿Con qué juega?
+texto,audio/textos/018.mp3,Hay un pato en el río.
+pregunta,audio/preguntas/018.mp3,¿Qué hay en el río?
+texto,audio/textos/019.mp3,La nena está en la cama.
+pregunta,audio/preguntas/019.mp3,¿Dónde está la nena?
+texto,audio/textos/020.mp3,Mi casa tiene una sala. En la sala hay una mesa. En la mesa hay una sopa.
+pregunta,audio/preguntas/020.mp3,¿Qué hay en la mesa?
+texto,audio/textos/021.mp3,Hay un pez en el mar.
+pregunta,audio/preguntas/021.mp3,¿Qué hay en el mar?
+texto,audio/textos/022.mp3,Hay un gato en mi casa. El gato es de mamá. El gato come pan.
+pregunta,audio/preguntas/022.mp3,¿Qué come el gato?
+texto,audio/textos/023.mp3,Mi papá tiene una caja.
+pregunta,audio/preguntas/023.mp3,¿Qué tiene papá?
+texto,audio/textos/024.mp3,Hoy llueve en la calle.
+pregunta,audio/preguntas/024.mp3,¿Qué hay hoy?
+texto,audio/textos/025.mp3,Mamá lleva una llave.
+pregunta,audio/preguntas/025.mp3,¿Qué lleva mamá?
+texto,audio/textos/026.mp3,Mi mamá toma leche.
+pregunta,audio/preguntas/026.mp3,¿Qué toma mamá?
+texto,audio/textos/027.mp3,Papá tiene un coche. El coche es rojo. Papá sale en el coche.
+pregunta,audio/preguntas/027.mp3,¿De qué color es el coche?
+texto,audio/textos/028.mp3,Mi papá pone un kilo de pera en la mesa.
+pregunta,audio/preguntas/028.mp3,¿Qué pone papá en la mesa?
+texto,audio/textos/029.mp3,El koala está en la isla.
+pregunta,audio/preguntas/029.mp3,¿Quién está en la isla?
+texto,audio/textos/030.mp3,Mamá quiere queso.
+pregunta,audio/preguntas/030.mp3,¿Qué quiere mamá?
+texto,audio/textos/031.mp3,Pepe quiere pan y queso. Pepe pone el queso en el pan.
+pregunta,audio/preguntas/031.mp3,¿Qué pone Pepe en el pan?
+texto,audio/textos/032.mp3,Mi mamá usa el wifi.
+pregunta,audio/preguntas/032.mp3,¿Qué usa mamá?
+texto,audio/textos/033.mp3,Hay un kiwi en la mesa.
+pregunta,audio/preguntas/033.mp3,¿Qué hay en la mesa?
+texto,audio/textos/034.mp3,El taxi sale de la casa.
+pregunta,audio/preguntas/034.mp3,¿Qué sale de la casa?
+texto,audio/textos/035.mp3,Hay un texto en el libro.
+pregunta,audio/preguntas/035.mp3,¿Dónde hay un texto?
+texto,audio/textos/036.mp3,Mi papá sale al mar.
+pregunta,audio/preguntas/036.mp3,¿A dónde sale papá?
+texto,audio/textos/037.mp3,Mi mamá pone sal en la sopa.
+pregunta,audio/preguntas/037.mp3,¿Qué pone mamá en la sopa?
+texto,audio/textos/038.mp3,Mi papá tiene un farol. El farol es de color rojo.
+pregunta,audio/preguntas/038.mp3,¿De qué color es el farol?
+texto,audio/textos/039.mp3,Mi mamá come pasta.
+pregunta,audio/preguntas/039.mp3,¿Qué come mamá?
+texto,audio/textos/040.mp3,Una mosca está en la mesa. La mosca no come pan.
+pregunta,audio/preguntas/040.mp3,¿Quién está en la mesa?
+texto,audio/textos/041.mp3,En la isla hay un mono. El mono come uvas.
+pregunta,audio/preguntas/041.mp3,¿Quién está en la isla?
+texto,audio/textos/042.mp3,Mi casa está en el campo.
+pregunta,audio/preguntas/042.mp3,¿Dónde está la casa?
+texto,audio/textos/043.mp3,El tambor es azul.
+pregunta,audio/preguntas/043.mp3,¿De qué color es el tambor?
+texto,audio/textos/044.mp3,Hay un pez azul en el mar. El pez nada.
+pregunta,audio/preguntas/044.mp3,¿Qué hay en el mar?
+texto,audio/textos/045.mp3,Mi mamá tiene una blusa.
+pregunta,audio/preguntas/045.mp3,¿Qué tiene mamá?
+texto,audio/textos/046.mp3,La bruja abre el libro. Es un libro de brujas.
+pregunta,audio/preguntas/046.mp3,¿Qué abre la bruja?
+texto,audio/textos/047.mp3,En la clase hay una mesa.
+pregunta,audio/preguntas/047.mp3,¿Dónde hay una mesa?
+texto,audio/textos/048.mp3,Mi papá pone un clavo en la pared.
+pregunta,audio/preguntas/048.mp3,¿Qué pone papá?
+texto,audio/textos/049.mp3,Mamá pone crema en mi brazo.
+pregunta,audio/preguntas/049.mp3,¿Dónde pone la crema?
+texto,audio/textos/050.mp3,La flor es de color rosa.
+pregunta,audio/preguntas/050.mp3,¿Qué es de color rosa?
+texto,audio/textos/051.mp3,Mi mamá come fruta. La fruta es una fresa.
+pregunta,audio/preguntas/051.mp3,¿Qué fruta es?
+texto,audio/textos/052.mp3,El globo es rojo.
+pregunta,audio/preguntas/052.mp3,¿Qué es rojo?
+texto,audio/textos/053.mp3,El tigre está en la sala. El tigre es grande.
+pregunta,audio/preguntas/053.mp3,¿Quién está en la sala?
+texto,audio/textos/054.mp3,Mi madre pone un cuadro en la pared.
+pregunta,audio/preguntas/054.mp3,¿Qué pone mi madre?
+texto,audio/textos/055.mp3,El tren sale a las tres.
+pregunta,audio/preguntas/055.mp3,¿Qué sale a las tres?
+texto,audio/textos/056.mp3,En el campo hay trigo. El trigo es de color oro.
+pregunta,audio/preguntas/056.mp3,¿Qué hay en el campo?
+texto,audio/textos/057.mp3,Hay una pluma en el plato.
+pregunta,audio/preguntas/057.mp3,¿Qué hay en el plato?
+texto,audio/textos/058.mp3,Mi papá y yo vamos a la playa.
+pregunta,audio/preguntas/058.mp3,¿A dónde van?
+texto,audio/textos/059.mp3,Mi premio es un libro.
+pregunta,audio/preguntas/059.mp3,¿Qué es el premio?
+texto,audio/textos/060.mp3,El perro corre en la casa.
+pregunta,audio/preguntas/060.mp3,¿Quién corre?
+texto,audio/textos/061.mp3,Mi papá tiene un carro. El carro es rojo.
+pregunta,audio/preguntas/061.mp3,¿Qué tiene papá?
+texto,audio/textos/062.mp3,La torre es muy alta.
+pregunta,audio/preguntas/062.mp3,¿Qué es muy alta?
+texto,audio/textos/063.mp3,El piano es de mi mamá.
+pregunta,audio/preguntas/063.mp3,¿De quién es el piano?
+texto,audio/textos/064.mp3,La nieve cae del cielo.
+pregunta,audio/preguntas/064.mp3,¿Qué cae del cielo?
+texto,audio/textos/065.mp3,Mi diente es blanco.
+pregunta,audio/preguntas/065.mp3,¿De qué color es mi diente?
+texto,audio/textos/066.mp3,Mi mamá bebe agua.
+pregunta,audio/preguntas/066.mp3,¿Qué bebe mamá?
+texto,audio/textos/067.mp3,Hay un huevo en la mesa.
+pregunta,audio/preguntas/067.mp3,¿Qué hay en la mesa?
+texto,audio/textos/068.mp3,El fuego es rojo.
+pregunta,audio/preguntas/068.mp3,¿Qué es rojo?
+texto,audio/textos/069.mp3,La puerta es azul.
+pregunta,audio/preguntas/069.mp3,¿De qué color es la puerta?
+texto,audio/textos/070.mp3,Hay aire en el globo.
+pregunta,audio/preguntas/070.mp3,¿Qué hay en el globo?
+texto,audio/textos/071.mp3,La reina tiene una boina.
+pregunta,audio/preguntas/071.mp3,¿Qué tiene la reina?
+texto,audio/textos/072.mp3,El loro está en la jaula.
+pregunta,audio/preguntas/072.mp3,¿Quién está en la jaula?
+texto,audio/textos/073.mp3,El pingüino nada en el mar.
+pregunta,audio/preguntas/073.mp3,¿Quién nada en el mar?
+texto,audio/textos/074.mp3,La cigüeña está en la torre.
+pregunta,audio/preguntas/074.mp3,¿Dónde está la cigüeña?
+texto,audio/textos/075.mp3,Mi papá es doctor.
+pregunta,audio/preguntas/075.mp3,¿Qué es mi papá?
+texto,audio/textos/076.mp3,Hay un pupitre en la clase.
+pregunta,audio/preguntas/076.mp3,¿Dónde hay un pupitre?
+texto,audio/textos/077.mp3,Mi tío vive en el campo.
+pregunta,audio/preguntas/077.mp3,¿Dónde vive mi tío?
+texto,audio/textos/078.mp3,Hoy es un día de sol.
+pregunta,audio/preguntas/078.mp3,¿Qué hay hoy?
+texto,audio/textos/079.mp3,En mi país hay un río.
+pregunta,audio/preguntas/079.mp3,¿Qué hay en mi país?
+texto,audio/textos/080.mp3,Mi mamá come maíz.
+pregunta,audio/preguntas/080.mp3,¿Qué come mamá?
+texto,audio/textos/081.mp3,El baúl es azul.
+pregunta,audio/preguntas/081.mp3,¿De qué color es el baúl?
+texto,audio/textos/082.mp3,A mi papá le gusta leer.
+pregunta,audio/preguntas/082.mp3,¿Qué le gusta a papá?
+texto,audio/textos/083.mp3,Mi mamá mide la sala.
+pregunta,audio/preguntas/083.mp3,¿Qué mide mamá?
+texto,audio/textos/084.mp3,La nena sale de la sala.
+pregunta,audio/preguntas/084.mp3,¿De dónde sale la nena?
+texto,audio/textos/085.mp3,Mi mamá me da la sopa.
+pregunta,audio/preguntas/085.mp3,¿Qué me da mamá?
+texto,audio/textos/086.mp3,El sofá es de mi mamá.
+pregunta,audio/preguntas/086.mp3,¿De quién es el sofá?
+texto,audio/textos/087.mp3,Fina sale de la sala.
+pregunta,audio/preguntas/087.mp3,¿Quién sale de la sala?
+texto,audio/textos/088.mp3,Papá me pasa la sopa.
+pregunta,audio/preguntas/088.mp3,¿Qué me pasa papá?
+texto,audio/textos/089.mp3,Pepe pone un pino en la isla.
+pregunta,audio/preguntas/089.mp3,¿Qué pone Pepe?
+texto,audio/textos/090.mp3,Mi mamá tapa la sopa.
+pregunta,audio/preguntas/090.mp3,¿Qué tapa mamá?
+texto,audio/textos/091.mp3,La nena toma la tuna.
+pregunta,audio/preguntas/091.mp3,¿Qué toma la nena?
+texto,audio/textos/092.mp3,Mi mamá tiene una rosa.
+pregunta,audio/preguntas/092.mp3,¿Qué tiene mamá?
+texto,audio/textos/093.mp3,Mamá pone la ropa en la sala.
+pregunta,audio/preguntas/093.mp3,¿Qué pone mamá?
+texto,audio/textos/094.mp3,El remo es de mi papá.
+pregunta,audio/preguntas/094.mp3,¿De quién es el remo?
+texto,audio/textos/095.mp3,La bola es de la nena.
+pregunta,audio/preguntas/095.mp3,¿De quién es la bola?
+texto,audio/textos/096.mp3,La bufanda es de mi mamá.
+pregunta,audio/preguntas/096.mp3,¿De quién es la bufanda?
+texto,audio/textos/097.mp3,El ave nada en el mar.
+pregunta,audio/preguntas/097.mp3,¿Quién nada en el mar?
+texto,audio/textos/098.mp3,Mi nena vive en la isla.
+pregunta,audio/preguntas/098.mp3,¿Dónde vive mi nena?
+texto,audio/textos/099.mp3,La niña pone la leña.
+pregunta,audio/preguntas/099.mp3,¿Qué pone la niña?
+texto,audio/textos/100.mp3,Mi mamá tiene un moño.
+pregunta,audio/preguntas/100.mp3,¿Qué tiene mamá?
+texto,audio/textos/101.mp3,Hoy tomo sopa y pan.
+pregunta,audio/preguntas/101.mp3,¿Qué tomo hoy?
+texto,audio/textos/102.mp3,Mi mamá me ayuda en la sala.
+pregunta,audio/preguntas/102.mp3,¿Quién me ayuda?
+texto,audio/textos/103.mp3,Kiko toma un kilo de uvas.
+pregunta,audio/preguntas/103.mp3,¿Qué toma Kiko?
+texto,audio/textos/104.mp3,La vaca come pasto.
+pregunta,audio/preguntas/104.mp3,¿Qué come la vaca?
+texto,audio/textos/105.mp3,Mi mamá toma café.
+pregunta,audio/preguntas/105.mp3,¿Qué toma mamá?
+texto,audio/textos/106.mp3,El mico come uvas.
+pregunta,audio/preguntas/106.mp3,¿Quién come uvas?
+texto,audio/textos/107.mp3,El cazo es azul.
+pregunta,audio/preguntas/107.mp3,¿De qué color es el cazo?
+texto,audio/textos/108.mp3,La luz es del sol.
+pregunta,audio/preguntas/108.mp3,¿De qué es la luz?
+texto,audio/textos/109.mp3,Mamá quita la sopa de la mesa.
+pregunta,audio/preguntas/109.mp3,¿Qué quita mamá?
+texto,audio/textos/110.mp3,El mico quiere queso.
+pregunta,audio/preguntas/110.mp3,¿Quién quiere queso?
+palabra,audio/palabras/aloe.mp3,aloe
+palabra,audio/palabras/lila.mp3,lila
+palabra,audio/palabras/lomo.mp3,lomo
+palabra,audio/palabras/mimo.mp3,mimo
+palabra,audio/palabras/mil.mp3,mil
+palabra,audio/palabras/alma.mp3,alma
+palabra,audio/palabras/osa.mp3,osa
+palabra,audio/palabras/masa.mp3,masa
+palabra,audio/palabras/suma.mp3,suma
+palabra,audio/palabras/asa.mp3,asa
+palabra,audio/palabras/lana.mp3,lana
+palabra,audio/palabras/nana.mp3,nana
+palabra,audio/palabras/sano.mp3,sano
+palabra,audio/palabras/mina.mp3,mina
+palabra,audio/palabras/ahi.mp3,ahí
+palabra,audio/palabras/moneda.mp3,moneda
+palabra,audio/palabras/dona.mp3,dona
+palabra,audio/palabras/lado.mp3,lado
+palabra,audio/palabras/kimono.mp3,kimono
+palabra,audio/palabras/gorila.mp3,gorila
+palabra,audio/palabras/mago.mp3,mago
+palabra,audio/palabras/amigo.mp3,amigo
+palabra,audio/palabras/jabon.mp3,jabón
+palabra,audio/palabras/reloj.mp3,reloj
+palabra,audio/palabras/rojo.mp3,rojo
+palabra,audio/palabras/hoja.mp3,hoja
+palabra,audio/palabras/saxofon.mp3,saxofón
+palabra,audio/palabras/llama.mp3,llama
+palabra,audio/palabras/gallo.mp3,gallo
+palabra,audio/palabras/calle.mp3,calle
+palabra,audio/palabras/botella.mp3,botella
+palabra,audio/palabras/chocolate.mp3,chocolate
+palabra,audio/palabras/cuchara.mp3,cuchara
+palabra,audio/palabras/techo.mp3,techo
+palabra,audio/palabras/chico.mp3,chico
+texto,audio/textos/111.mp3,La ola.
+texto,audio/textos/112.mp3,El aula.
+texto,audio/textos/113.mp3,El aloe.
+texto,audio/textos/114.mp3,La lila.
+texto,audio/textos/115.mp3,Mamá ama a Lalo.
+texto,audio/textos/116.mp3,Lola mima a la mula.
+texto,audio/textos/117.mp3,Amo a mi mamá.
+texto,audio/textos/118.mp3,Lalo mima a mamá.
+texto,audio/textos/119.mp3,La osa sale a la isla.
+texto,audio/textos/120.mp3,Lola es mi mamá.
+texto,audio/textos/121.mp3,Sale el sol.
+texto,audio/textos/122.mp3,El sol sale a la isla.
+texto,audio/textos/123.mp3,Lola mima a una nena.
+texto,audio/textos/124.mp3,La luna sale.
+texto,audio/textos/125.mp3,Ana usa la lana.
+texto,audio/textos/126.mp3,El mono no sale.
+texto,audio/textos/127.mp3,Sale humo en la isla.
+texto,audio/textos/128.mp3,Mi mamá usa un hilo.
+texto,audio/textos/129.mp3,Ahí sale la luna.
+texto,audio/textos/130.mp3,"Hola, mono. Ana mima a su mono. El mono sale a la isla."
+texto,audio/textos/131.mp3,Lola da una moneda a mamá.
+texto,audio/textos/132.mp3,El dado es de Lalo.
+texto,audio/textos/133.mp3,El sofá es de Fina.
+texto,audio/textos/134.mp3,Lalo da fideos a Fina.
+texto,audio/textos/135.mp3,Lola vive en una isla.
+texto,audio/textos/136.mp3,La niña da una piña a su mamá.
+texto,audio/textos/137.mp3,Kiko usa un kayak en el mar.
+texto,audio/textos/138.mp3,Mi mamá toma zumo de uva.
+texto,audio/textos/139.mp3,Mi gato sube a la mesa.
+texto,audio/textos/140.mp3,Mi mamá tiene un gato. El gato es de Ana.
+texto,audio/textos/141.mp3,Hay un lago en la isla.
+texto,audio/textos/142.mp3,La jirafa es muy alta.
+texto,audio/textos/143.mp3,Mi mamá toma jugo de naranja.
+texto,audio/textos/144.mp3,La jirafa come hojas.
+texto,audio/textos/145.mp3,Mi papá usa la web.
+texto,audio/textos/146.mp3,Lola come un kiwi. El kiwi es verde.
+texto,audio/textos/147.mp3,Mi papá sale en el taxi.
+texto,audio/textos/148.mp3,El boxeo es un deporte.
+texto,audio/textos/149.mp3,La niña lleva una silla.
+texto,audio/textos/150.mp3,El pollo está en la mesa.
+texto,audio/textos/151.mp3,Mi mamá toma chocolate.
+texto,audio/textos/152.mp3,La mochila es de Lalo.
+texto,audio/textos/153.mp3,Es de noche. Sale la luna.
+texto,audio/textos/154.mp3,Rosa tiene una rata. La rata está en la sala. Rosa mira la rata.
+texto,audio/textos/155.mp3,Beto tiene una bola. Beto la pasa a Lola. Lola la pasa a Beto.
+texto,audio/textos/156.mp3,Yo ayudo a mamá. Mamá y yo ponemos la mesa. Yo pelo una pera y mamá pela una piña.
+texto,audio/textos/157.mp3,Mi casa es de color rosa. Hay una cama en mi casa. En la cama está mi mono. Mi mono come una uva.
+texto,audio/textos/158.mp3,Zoe tiene un zapato azul. El zapato azul es muy bonito. Zoe se pone el zapato.
+texto,audio/textos/159.mp3,Quique quiere queso. Mamá le pone queso en el pan. Quique come el pan con queso.
+texto,audio/textos/160.mp3,Javi tiene una caja roja. En la caja hay una jirafa. La jirafa es de goma.
+texto,audio/textos/161.mp3,Es de noche. Mamá me da un beso. Papá me da un beso. Yo me voy a la cama.
+texto,audio/textos/162.mp3,Mi papá tiene un árbol.
+texto,audio/textos/163.mp3,El pastel es de limón.
+texto,audio/textos/164.mp3,Mi mamá pone una lámpara en la sala.
+texto,audio/textos/165.mp3,La bruja usa una escoba.
+texto,audio/textos/166.mp3,Mi mamá pone la tabla en la mesa. En la tabla hay pan.
+texto,audio/textos/167.mp3,La flor es de Lola. La flor es muy bonita.
+texto,audio/textos/168.mp3,Mi mamá come flan de fresa.
+texto,audio/textos/169.mp3,La regla es larga.
+texto,audio/textos/170.mp3,Mi papá tiene un gran globo rojo.
+texto,audio/textos/171.mp3,El plato es blanco.
+texto,audio/textos/172.mp3,La nieve es muy fría.
+texto,audio/textos/173.mp3,Mi tío toca el violín.
+texto,audio/textos/174.mp3,El fuego calienta la casa.
+texto,audio/textos/175.mp3,Mi abuela cuenta un cuento.
+texto,audio/textos/176.mp3,El auto de mi papá es nuevo.
+texto,audio/textos/177.mp3,La cigüeña tiene un nido en la torre.
+texto,audio/textos/178.mp3,La cigüeña tiene un nido. En el nido hay un huevo.
+texto,audio/textos/179.mp3,El actor sale en el teatro.
+texto,audio/textos/180.mp3,Mi pupitre es de madera.
+texto,audio/textos/181.mp3,Rosa tiene un perro. El perro se llama Toro. Toro corre por la sala y salta sobre el sofá. Rosa lo mira y se ríe. Toro es un perro muy loco.
+texto,audio/textos/182.mp3,La tortuga se llama Tula. Tula camina por el jardín. Camina muy lento. Un pájaro canta en la torre. Tula mira al pájaro y sonríe.
+texto,audio/textos/183.mp3,Hoy es un día de lluvia. Mi mamá y yo vamos a casa de mi tío. Mi tío tiene un piano. Mi mamá toca el piano y yo canto. La lluvia cae sobre la ventana.
+texto,audio/textos/184.mp3,"En el cielo hay una nube blanca. La nube es como un pez. Otra nube es como un perro. Mi tío mira las nubes y dice: Mira, hay un barco."
+texto,audio/textos/185.mp3,"Mi abuela tiene un huerto. En el huerto hay tomates, lechugas y zanahorias. Mi abuela riega las plantas con agua. El sol sale y las plantas crecen."
+texto,audio/textos/186.mp3,Hoy es mi cumpleaños. Mi mamá hace una tarta de fresa. Mi papá pone cuatro velas en la tarta. Yo soplo las velas y pido un deseo. Mis amigos cantan y cantan.
+texto,audio/textos/187.mp3,"El loro está en la jaula. El loro dice: Hola, hola. Aitor se ríe. Aitor abre la jaula. El loro sale y vuela por el aire. Luego vuelve a su jaula."
+texto,audio/textos/188.mp3,En el mar vive un pingüino. El pingüino nada muy rápido. Un día ve un pez. Lo mira y lo come. Luego se sube a una roca y toma el sol. Es un pingüino muy feliz.
+texto,audio/textos/189.mp3,Mi papá es actor. Sale en el teatro. Hoy el teatro está lleno. Mi papá sale con un traje azul. El público aplaude.
+texto,audio/textos/190.mp3,"Ana va a la escuela. En su mochila hay un cuaderno, un lápiz y una goma. La maestra pone un dibujo en la pizarra. Ana mira el dibujo y sonríe. Luego Ana pinta un sol."
+texto,audio/textos/191.mp3,Mi tío tiene un barco en el río. El barco es azul y blanco. Hoy es un día de sol. Mi tío y yo salimos a pescar. Mi tío pesca un pez muy grande. Luego comemos pescado con maíz.
+texto,audio/textos/192.mp3,"El baúl de mi abuela es muy viejo. Dentro hay un libro, una foto y un reloj. El libro es de cuentos. Mi abuela me lee un cuento cada día."
+texto,audio/textos/193.mp3,Hoy es un día muy frío. Mi mamá me pone un abrigo y una bufanda. Mi papá y yo salimos al parque. Hay mucha nieve. Hacemos un muñeco de nieve con una zanahoria.
+texto,audio/textos/194.mp3,A Lola se le cae el helado.
+texto,audio/textos/195.mp3,Mamá me lava la mano. Me pone una tirita.
+texto,audio/textos/196.mp3,Rosa se pone la bufanda y el gorro.
+texto,audio/textos/197.mp3,Es de noche. Mamá me da un beso. Yo cierro los ojos.
+texto,audio/textos/198.mp3,La luna sale. Mamá me dijo: A la cama.
+texto,audio/textos/199.mp3,Yo me pongo las botas. Voy a saltar en los charcos.
+pregunta,audio/preguntas/111.mp3,¿Qué dice el texto?
+pregunta,audio/preguntas/112.mp3,¿Qué dice el texto?
+pregunta,audio/preguntas/113.mp3,¿Qué dice el texto?
+pregunta,audio/preguntas/114.mp3,¿Qué dice el texto?
+pregunta,audio/preguntas/115.mp3,¿Quién ama a Lalo?
+pregunta,audio/preguntas/116.mp3,¿A quién mima Lola?
+pregunta,audio/preguntas/117.mp3,¿A quién amo?
+pregunta,audio/preguntas/118.mp3,¿Quién mima a mamá?
+pregunta,audio/preguntas/119.mp3,¿Quién sale a la isla?
+pregunta,audio/preguntas/120.mp3,¿Quién es Lola?
+pregunta,audio/preguntas/121.mp3,¿Qué sale?
+pregunta,audio/preguntas/122.mp3,¿A dónde sale el sol?
+pregunta,audio/preguntas/123.mp3,¿A quién mima Lola?
+pregunta,audio/preguntas/124.mp3,¿Qué sale?
+pregunta,audio/preguntas/125.mp3,¿Qué usa Ana?
+pregunta,audio/preguntas/126.mp3,¿Quién no sale?
+pregunta,audio/preguntas/127.mp3,¿Qué sale en la isla?
+pregunta,audio/preguntas/128.mp3,¿Qué usa mamá?
+pregunta,audio/preguntas/129.mp3,¿Qué sale?
+pregunta,audio/preguntas/130.mp3,¿Quién mima al mono?
+pregunta,audio/preguntas/131.mp3,¿Qué da Lola?
+pregunta,audio/preguntas/132.mp3,¿De quién es el dado?
+pregunta,audio/preguntas/133.mp3,¿De quién es el sofá?
+pregunta,audio/preguntas/134.mp3,¿Qué da Lalo?
+pregunta,audio/preguntas/135.mp3,¿Dónde vive Lola?
+pregunta,audio/preguntas/136.mp3,¿Qué da la niña?
+pregunta,audio/preguntas/137.mp3,¿Qué usa Kiko?
+pregunta,audio/preguntas/138.mp3,¿Qué toma mamá?
+pregunta,audio/preguntas/139.mp3,¿Quién sube a la mesa?
+pregunta,audio/preguntas/140.mp3,¿De quién es el gato?
+pregunta,audio/preguntas/141.mp3,¿Qué hay en la isla?
+pregunta,audio/preguntas/142.mp3,¿Quién es muy alta?
+pregunta,audio/preguntas/143.mp3,¿Qué toma mamá?
+pregunta,audio/preguntas/144.mp3,¿Qué come la jirafa?
+pregunta,audio/preguntas/145.mp3,¿Qué usa papá?
+pregunta,audio/preguntas/146.mp3,¿De qué color es el kiwi?
+pregunta,audio/preguntas/147.mp3,¿En qué sale papá?
+pregunta,audio/preguntas/148.mp3,¿Qué es un deporte?
+pregunta,audio/preguntas/149.mp3,¿Qué lleva la niña?
+pregunta,audio/preguntas/150.mp3,¿Qué está en la mesa?
+pregunta,audio/preguntas/151.mp3,¿Qué toma mamá?
+pregunta,audio/preguntas/152.mp3,¿De quién es la mochila?
+pregunta,audio/preguntas/153.mp3,¿Qué sale de noche?
+pregunta,audio/preguntas/154.mp3,¿Dónde está la rata?
+pregunta,audio/preguntas/155.mp3,¿Qué tiene Beto?
+pregunta,audio/preguntas/156.mp3,¿Qué pelo yo?
+pregunta,audio/preguntas/157.mp3,¿Qué come el mono?
+pregunta,audio/preguntas/158.mp3,¿De qué color es el zapato?
+pregunta,audio/preguntas/159.mp3,¿Qué come Quique?
+pregunta,audio/preguntas/160.mp3,¿Qué hay en la caja?
+pregunta,audio/preguntas/161.mp3,¿Qué me da mamá?
+pregunta,audio/preguntas/162.mp3,¿Qué tiene papá?
+pregunta,audio/preguntas/163.mp3,¿De qué es el pastel?
+pregunta,audio/preguntas/164.mp3,¿Qué pone mamá en la sala?
+pregunta,audio/preguntas/165.mp3,¿Qué usa la bruja?
+pregunta,audio/preguntas/166.mp3,¿Qué hay en la tabla?
+pregunta,audio/preguntas/167.mp3,¿De quién es la flor?
+pregunta,audio/preguntas/168.mp3,¿Qué come mamá?
+pregunta,audio/preguntas/169.mp3,¿Qué es larga?
+pregunta,audio/preguntas/170.mp3,¿De qué color es el globo?
+pregunta,audio/preguntas/171.mp3,¿De qué color es el plato?
+pregunta,audio/preguntas/172.mp3,¿Qué es muy fría?
+pregunta,audio/preguntas/173.mp3,¿Qué toca mi tío?
+pregunta,audio/preguntas/174.mp3,¿Qué calienta la casa?
+pregunta,audio/preguntas/175.mp3,¿Qué cuenta mi abuela?
+pregunta,audio/preguntas/176.mp3,¿Qué es nuevo?
+pregunta,audio/preguntas/177.mp3,¿Qué tiene la cigüeña?
+pregunta,audio/preguntas/178.mp3,¿Qué hay en el nido?
+pregunta,audio/preguntas/179.mp3,¿Dónde sale el actor?
+pregunta,audio/preguntas/180.mp3,¿De qué es mi pupitre?
+pregunta,audio/preguntas/181.mp3,¿Dónde salta Toro?
+pregunta,audio/preguntas/182.mp3,¿Quién camina muy lento?
+pregunta,audio/preguntas/183.mp3,¿Qué toca mamá?
+pregunta,audio/preguntas/184.mp3,¿Qué mira mi tío?
+pregunta,audio/preguntas/185.mp3,¿Con qué riega las plantas mi abuela?
+pregunta,audio/preguntas/186.mp3,¿Qué hace mamá?
+pregunta,audio/preguntas/187.mp3,¿Quién vuela por el aire?
+pregunta,audio/preguntas/188.mp3,¿Qué come el pingüino?
+pregunta,audio/preguntas/189.mp3,¿Dónde sale mi papá?
+pregunta,audio/preguntas/190.mp3,¿Qué pinta Ana?
+pregunta,audio/preguntas/191.mp3,¿Qué pesca mi tío?
+pregunta,audio/preguntas/192.mp3,¿Qué hay dentro del baúl?
+pregunta,audio/preguntas/193.mp3,¿Qué hacemos con la nieve?
+pregunta,audio/preguntas/194.mp3,¿Cómo está Lola?
+pregunta,audio/preguntas/195.mp3,¿Qué me pasó?
+pregunta,audio/preguntas/196.mp3,¿Qué tiempo hace?
+pregunta,audio/preguntas/197.mp3,¿Qué voy a hacer?
+pregunta,audio/preguntas/198.mp3,¿Qué hora es?
+pregunta,audio/preguntas/199.mp3,¿Qué tiempo hace?
